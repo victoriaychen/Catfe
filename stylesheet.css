@@ -37,6 +37,7 @@ body{
     width: 20%;
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
+    z-index: 2;
 }
 
 .nav-links a{
@@ -82,8 +83,9 @@ body{
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 60%;
-        transform: translateX(100%);
+        width: 80%;
+   
+        transform: translateX(200%);
         transition: transform 0.5s ease-in;
     }
     .nav-links li{

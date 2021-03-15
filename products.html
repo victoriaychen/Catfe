@@ -27,11 +27,260 @@
                 text-shadow: 0 0 2px rgb(65, 63, 63);
                 text-align: center;
                 background-size: cover;
-                background-image: url('images/top.jpg');
+                background-image: url('images/cat-drinking-tea.jpg');
                 background-position: center 30%;
                 width: 100%;
-                padding-top: 30ls
-                0px;
+                padding-top: 300px;
+            }
+
+            h2 {
+                text-align: center;
+                letter-spacing: 3px;
+                width: 100%;
+                padding: 70px;
+                font-weight: 100;
+                font-size: 25px;
+            }
+            h3 {
+                text-align: center;
+                letter-spacing: 3px;
+                width: 100%;
+                margin-top: -50px;
+                font-weight: 100;
+                font-size: 13px;
+            }
+            .card1{
+                position: relative;
+                margin: 50px 50px 50px 450px;
+                width: 320px;
+                height: 420px;
+                background-color: rgb(250, 221, 186);
+                border-radius: 20px;
+                overflow: hidden;
+            }
+            .card2{
+                position: relative;
+                margin: -471px 0px 0px 850px;
+                width: 320px;
+                height: 420px;
+                background-color: rgb(250, 221, 186);
+                border-radius: 20px;
+                overflow: hidden;
+            }
+            .card3{
+                position: relative;
+                margin: -422px 0px 0px 1250px;
+                width: 320px;
+                height: 420px;
+                background-color: rgb(250, 221, 186);
+                border-radius: 20px;
+                overflow: hidden;
+            }
+            .card1::before{
+                content: '';
+                position: absolute;
+                top: -50%;
+                width: 100%;
+                height: 100%;
+                background: rgb(248, 244, 234);
+                transform: skewY(345deg);
+                transition: 0.5s;
+            }
+            .card1:hover::before{
+                top: -70%;
+                transform: skewY(390deg);
+            }
+            .card1::after{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                font-weight: 600;
+                font-size: 8em;
+                color: black;
+            }
+            .card1 .imgBox{
+                position: relative;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 20px;
+                z-index: 1;
+            }
+            .card1 .imgBox img{
+                max-width: 100%;
+                max-height: 80%;
+                transition: 0.5s;
+            }
+            .card1:hover .imgBox img{
+                transform: rotate(20deg);
+                max-width: 70%;
+            }
+            .card1 .contentBox{
+                position: relative;
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                z-index: 1;
+            }
+            .card1 .contentBox h4 {
+                text-align: center;
+                letter-spacing: 3px;
+                width: 100%;
+                margin-top: -50px;
+                font-weight: 100;
+                font-size: 20px;
+            }
+
+            /* Card2 */
+            .card2::before{
+                content: '';
+                position: absolute;
+                top: -50%;
+                width: 100%;
+                height: 100%;
+                background: rgb(248, 244, 234);
+                transform: skewY(345deg);
+                transition: 0.5s;
+            }
+            .card2:hover::before{
+                top: -70%;
+                transform: skewY(390deg);
+            }
+            .card2::after{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                font-weight: 600;
+                font-size: 8em;
+                color: black;
+            }
+            .card2 .imgBox2{
+                position: relative;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 75px;
+                z-index: 1;
+            }
+            .card2 .imgBox2 img{
+                max-width: 100%;
+                max-height: 80%;
+                transition: 0.5s;
+            }
+            .card2:hover .imgBox2 img{
+                transform: rotate(20deg);
+                max-width: 70%;
+            }
+            .card2 .contentBox{
+                position: relative;
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                z-index: 1;
+            }
+            .card2 .contentBox h4 {
+                text-align: center;
+                letter-spacing: 3px;
+                width: 100%;
+                margin-top: -50px;
+                font-weight: 100;
+                font-size: 20px;
+            }
+            /* Card3 */
+            .card3::before{
+                content: '';
+                position: absolute;
+                top: -50%;
+                width: 100%;
+                height: 100%;
+                background: rgb(248, 244, 234);
+                transform: skewY(345deg);
+                transition: 0.5s;
+            }
+            .card3:hover::before{
+                top: -70%;
+                transform: skewY(390deg);
+            }
+            .card3::after{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                font-weight: 600;
+                font-size: 8em;
+                color: black;
+            }
+            .card3 .imgBox{
+                position: relative;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 20px;
+                z-index: 1;
+            }
+            .card3 .imgBox img{
+                max-width: 100%;
+                max-height: 80%;
+                transition: 0.5s;
+            }
+            .card3:hover .imgBox img{
+                transform: rotate(20deg);
+                max-width: 70%;
+            }
+            .card3 .contentBox{
+                position: relative;
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                z-index: 1;
+            }
+            .card3 .contentBox h4 {
+                text-align: center;
+                letter-spacing: 3px;
+                width: 100%;
+                margin-top: -50px;
+                font-weight: 100;
+                font-size: 20px;
+            }
+            @media screen and (max-width: 1570px) {
+                .card1{
+                    position: relative;
+                    width: 320px;
+                    height: 420px;
+                    background-color: rgb(250, 221, 186);
+                    border-radius: 20px;
+                    overflow: hidden;
+                    margin: 10% 30% 20%;
+                }
+                .card2{
+                    position: relative;
+                    width: 320px;
+                    height: 420px;
+                    background-color: rgb(250, 221, 186);
+                    border-radius: 20px;
+                    overflow: hidden;
+                    margin: 10% 30% 20%;
+                }
+                .card3{
+                    position: relative;
+                    width: 320px;
+                    height: 420px;
+                    background-color: rgb(250, 221, 186);
+                    border-radius: 20px;
+                    overflow: hidden;
+                    margin: 10% 30% 20%;
+                }
             }
         </style>
 
@@ -63,6 +312,61 @@
             <div id="top">
                 Products
             </div>
+            <h2>Catfé is home to many fresh products! <br></h2>
+            <h3>Made of 100% Certified <strong>Organic</strong> and <strong>Fair Trade</strong>.</h3>
+            <!-- Café Options -->
+            <h2><strong>Catfé Options</strong></h2>
+            <div class="card1">
+                <div class="imgBox">
+                    <img src="images/cat-latte.png">
+                </div>
+                <div class="contentBox">
+                    <h4 style="margin-top: -5%;">Signature Catfé Latte <br><br><br>Made with fresh beans from Columbia</h4>
+                </div>
+            </div>
+            <div class="card2">
+                <div class="imgBox2">
+                    <img src="images/matcha-cake.png">
+                </div>
+                <div class="contentBox">
+                    <h4 style="margin-top: -6%;"> Matcha Cake <br><br><br>Made with fresh cream and imported premium matcha</h4>
+                </div>
+            </div>
+            <div class="card3">
+                <div class="imgBox">
+                    <img src="images/dango.png">
+                </div>
+                <div class="contentBox">
+                    <h4 style="margin-top: 32%;"> Catfé Dango <br><br><br>Purrfectly Sweet.</h4>
+                </div>
+            </div>
+            <!-- Snacks Products -->
+            <h2><strong>Cat Center</strong></h2>
+            <div class="card1">
+                <div class="imgBox">
+                    <img src="images/cat-treats.png">
+                </div>
+                <div class="contentBox">
+                    <h4 style="margin-top: -5%;">Cat Treats</h4>
+                </div>
+            </div>
+            <div class="card2">
+                <div class="imgBox2">
+                    <img src="images/play-string.png">
+                </div>
+                <div class="contentBox">
+                    <h4 style="margin-top: 40%;"> Cat Toys</h4>
+                </div>
+            </div>
+            <div class="card3">
+                <div class="imgBox">
+                    <img src="images/collar.png">
+                </div>
+                <div class="contentBox">
+                    <h4 style="margin-top: -5%;"> Cat Collar</h4>
+                </div>
+            </div>
+
         </div>
     </body>
 
