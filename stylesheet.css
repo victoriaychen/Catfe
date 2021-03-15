@@ -19,6 +19,9 @@ nav{
     letter-spacing: 5px;
     font-size: 20px;
 }
+body{
+    overflow-x: hidden;
+}
 /* This controls shape of the nav bar */
 .nav-links{
     display: flex;
