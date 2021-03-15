@@ -58,6 +58,19 @@
           height: 350px;
         }
         
+        #schedule_top {
+          padding: 50px 0px 40px 0px;
+          font-size: 30px;
+        }
+        
+        #schedule {
+          width: 900px;
+          height: 600px;
+          margin: auto;
+          display: block;
+          margin-bottom: 100px;
+        }
+        
         p {
           letter-spacing: 3px;
           color: #7B7B7B;
@@ -70,6 +83,17 @@
           width: 500px;
           margin: 5px 30px 60px 30px;
           
+        }
+        
+        .block {
+          display: inline-block;
+          width: 500px;
+          margin: 5px 30px 60px 30px;
+          transition: all 1s;
+        }
+        
+        .block:hover {
+          transform: scale(1.05);
         }
         
         .row {
@@ -120,7 +144,7 @@
               <img src="images/cookies.jpg" alt=“Cat sugar cookies”>
               <h3 class="event">Cookie Fiesta</h3>
               <p>Create mini portraits of our catfé family in cookie form! A perfect afternoon snack but perhaps too good to eat. Best cookie wins an event ticket of choice!</p>
-              <h4>Event time: Sundays 3:00pm-5:00pm</h4>
+              <h4>Event time: Sundays 3:00pm-7:00pm</h4>
             </div>
             <div class="block">
               <img src="images/brew.jpg" alt=“Cat next to coffee drip” />
@@ -132,9 +156,9 @@
           <div class="row">
             <div class="block">
               <img src="images/backpack.jpg" alt=“Cat in backpack”>
-              <h3 class="event">Cat Sitting</h3>
-              <p>Bring your favourite fur baby with you on an outdoors adventure! We will supply a cat carrier. It is up to you the adventure you go on but please take care of them!</p>
-              <h4>Event time: by approval</h4>
+              <h3 class="event">Cat Backing</h3>
+              <p>Bring your fur baby with you on an outdoors adventure! We will travel together in a group carrying individual cat carriers while admiring the Medford scenery. A favorite event of many!</p>
+              <h4>Event time: Mondays 3:00pm-5:00pm</h4>
             </div>
             <div class="block">
               <img src="images/movie_night.jpg" alt=“Movie night”>
@@ -168,9 +192,11 @@
               <img src="images/kitten.jpg" alt=“Kitten photo”>
               <h3 class="event">Kittens Greet & Meet</h3>
               <p>Catfé has recently welcomed the litter of (insert) and (insert). Come meet our newest and, in many's opinion, cutest members of our catfé fur family!</p>
-              <h4>Event time: Fridays to 4:00pm-5:00pm</h4>
+              <h4>Event time: Fridays to 4:00pm-6:00pm</h4>
             </div>
           </div>
+          <h2 id="schedule_top">Schedule</h2>
+          <img src="images/Schedule.png" alt=“Events schedule” id="schedule">
         </div>
       </div>
     </body>
