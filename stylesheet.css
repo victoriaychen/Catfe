@@ -20,6 +20,10 @@ nav{
     background-color: #decfac;
     font-family: 'Playfair Display', serif;
 }
+/* Prevent Scrolling due to Nav bar */
+body{
+    overflow-x: hidden;
+}
 .logo{
     color: black;
     text-transform: uppercase;
