@@ -63,6 +63,39 @@
           background-size: cover;
           width: 100%;
           height: 350px;
+          transition: .5s ease;
+          backface-visibility: hidden;
+        }
+        
+        .middle {
+          transition: .5s ease;
+          opacity: 0;
+          position: absolute;
+          width: 100%;
+          top: 30%;
+          left: 35%;          
+          text-align: center;
+        }     
+        
+        .block:hover .image {
+          opacity: 0.3;
+        }  
+        
+        .block:hover .middle {
+          opacity: 1;
+        }
+        
+        .text {
+          width: 30%;
+          background-color: #B5926D;
+          color: white !important;
+          font-size: 16px;
+          padding: 16px 32px;
+          letter-spacing: 1px;
+        }
+        
+        .text a {
+          color: white !important;
         }
         
         #schedule_top {
@@ -91,6 +124,7 @@
           display: inline-block;
           width: 500px;
           margin: 5px 30px 60px 30px;
+          position: relative;
           transition: all 1s;
         }
         
@@ -109,6 +143,9 @@
           text-transform: uppercase;
           text-align: center;
         }  
+        
+        
+        
         </style>
         <script type="text/javascript">
         window.onscroll = function() {scrollFunction()};
@@ -126,9 +163,8 @@
     <body>
         <nav>
           <div class="logo">    
-            <a href="index.html"><img src="images/catfeLogo.png" alt="logo" style="width:90px;height:80px;"></a>   
-            <h4 >Catfé</h4>
-        </div>
+            <a href="index.html"><img src="images/full_logo.jpg" alt="logo"></a>   
+          </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -150,13 +186,19 @@
           <h2>Catfé hosts a range of events all year round, including <br> but not limited to seasonal, celebrational, and holiday events.<br> Come join us and our fur babies!</h2>
           <div class="row">
             <div class="block">
-              <img src="images/cookies.jpg" alt=“Cat sugar cookies”>
+              <img class="image" src="images/cookies.jpg" alt=“Cat sugar cookies”>
+              <div class="middle">
+                <a href="contacts.html"><div class="text">Reserve</div></a>
+              </div>
               <h3 class="event">Cookie Fiesta</h3>
               <p>Create mini portraits of our catfé family in cookie form! A perfect afternoon snack but perhaps too good to eat. Best cookie wins an event ticket of choice!</p>
               <h4>Event time: Sundays 3:00pm-7:00pm</h4>
             </div>
             <div class="block">
-              <img src="images/brew.jpg" alt=“Cat next to coffee drip” />
+              <img class="image" src="images/brew.jpg" alt=“Cat next to coffee drip” />
+              <div class="middle">
+                <a href="contacts.html"><div class="text">Reserve</div></a>
+              </div>
               <h3 class="event">Catfé Brewing</h3>
               <p>Enjoy a relaxing afternoon learning to make all types of coffee brews with, of course, our cats! No they won't be doing the brewing but smelling is just as wonderful.</p>
               <h4>Event time: Wednesdays 2:00pm-5:00pm</h4>
@@ -164,13 +206,19 @@
           </div>
           <div class="row">
             <div class="block">
-              <img src="images/backpack.jpg" alt=“Cat in backpack”>
+              <img class="image" src="images/backpack.jpg" alt=“Cat in backpack”>
+              <div class="middle">
+                <a href="contacts.html"><div class="text">Reserve</div></a>
+              </div>
               <h3 class="event">Cat Backing</h3>
               <p>Bring your fur baby with you on an outdoors adventure! We will travel together in a group carrying individual cat carriers while admiring the Medford scenery. A favorite event of many!</p>
               <h4>Event time: Mondays 3:00pm-5:00pm</h4>
             </div>
             <div class="block">
-              <img src="images/movie_night.jpg" alt=“Movie night”>
+              <img class="image" src="images/movie_night.jpg" alt=“Movie night”>
+              <div class="middle">
+                <a href="contacts.html"><div class="text">Reserve</div></a>
+              </div>
               <h3 class="event">Movie Night</h3>
               <p>A fan of scary movies? Well our cats are too, really! Come join us to watch some horror movie classics and other not so scary ones too. We're open to movies suggestions!</p>
               <h4>Event time: Fridays 8:00pm-10:30pm</h4>
@@ -178,13 +226,19 @@
           </div>
           <div class="row">
             <div class="block">
-              <img src="images/cat_on_comp.jpg" alt=“Cat on computer”>
+              <img class="image" src="images/cat_on_comp.jpg" alt=“Cat on computer”>
+              <div class="middle">
+                <a href="contacts.html"><div class="text">Reserve</div></a>
+              </div>
               <h3 class="event">Gaming club</h3>
               <p>Virtual people are great company but we'd argue there's nothing quite like a cat's companion. You bring your laptop, we'll have our cats and delicious snacks!</p>
               <h4>Event time: Saturdays 9:00pm-11:00pm</h4>
             </div>
             <div class="block">
-              <img src="images/foam_art.jpg" alt=“Cat latte art”>
+              <img class="image" src="images/foam_art.jpg" alt=“Cat latte art”>
+              <div class="middle">
+                <a href="contacts.html"><div class="text">Reserve</div></a>
+              </div>
               <h3 class="event">Latté Cat Art</h3>
               <p>Why? Cause there can never be too much cats (or too much coffee). Come learn to make the cutest foam art ever! P.S We even have cat models for reference.</p>
               <h4>Event time: Sundays 10:00am-11:30am</h4>
@@ -192,13 +246,19 @@
           </div>
           <div class="row">
             <div class="block">
-              <img src="images/catoween.jpg" alt=“Celebrate Halloween with our cats”>
+              <img class="image" src="images/catoween.jpg" alt=“Celebrate Halloween with our cats”>
+              <div class="middle">
+                <a href="contacts.html"><div class="text">Reserve</div></a>
+              </div>
               <h3 class="event">Cat-o-ween</h3>
               <p>It's witchy season! And we all know it won't be complete without our mystical furfriends. Come dressed up as witches and enjoy spooky delights with the purrfect company.</p>
               <h4>Event time: Halloween week</h4>
             </div>
             <div class="block">
-              <img src="images/kitten.jpg" alt=“Kitten photo”>
+              <img class="image" src="images/kitten.jpg" alt=“Kitten photo”>
+              <div class="middle">
+                <a href="contacts.html"><div class="text">Reserve</div></a>
+              </div>
               <h3 class="event">Kittens Greet & Meet</h3>
               <p>Catfé has recently welcomed the litter of (insert) and (insert). Come meet our newest and, in many's opinion, cutest members of our catfé fur family!</p>
               <h4>Event time: Fridays to 4:00pm-6:00pm</h4>
@@ -210,7 +270,7 @@
       </div>
       <footer>
         <a href="index.html"><img src="images/catfeLogo.png" alt="Catfé Logo" id="logo"/>
-        <div class="logo">Catfé</div></a>
+        <div class="name">Catfé</div></a>
         <br>&copy; 2021 Catfé All Rights Reserved We Hope
       <footer>
     </body>
