@@ -6,6 +6,7 @@
         <meta name = "author" content="Victoria Y. Chen, Willy (Wo Wei) Lin, Yiyi Wang, Sara Siqueira">
         <meta name = "viewport" content="width=device-width, initial-scale =1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
@@ -42,6 +43,26 @@
                 height: 40vh;
                 padding-top: 5%;
             }
+            #slideshow { 
+                margin: 50px auto; 
+                position: relative; 
+                width: 30%; 
+                height: 40%; 
+                padding: 10%; 
+                box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+            }
+            #slideshow img{
+                width: 100%; 
+                height: 100%; 
+            }
+
+            #slideshow > div { 
+                position: absolute; 
+                top: 10px; 
+                left: 10px; 
+                right: 10px; 
+                bottom: 10px; 
+            }
 
         </style>
 
@@ -75,12 +96,43 @@
         <div class="main">
             <h1>Purrfection in A Cup</h1>  
             <div class="block1"><p>Tufts University's First Cat Café</p></div>
-        </div>               
+        </div>      
+        <div id="slideshow">
+            <div>
+              <img src="images/slide1.JPG">
+            </div>
+            <div>
+              <img src="images/slide2.JPG">
+            </div>
+            <div>
+              <img src="images/slide3.JPG">
+            </div>
+            <div>
+                <img src="images/slide4.JPG">
+              </div>
+            <div>
+                <img src="images/slide5.JPG">
+            </div>
+            <div>
+                <img src="images/slide6.JPG">
+            </div>
+         </div> 
         <footer>
           <a href="index.html"><img src="images/catfeLogo.png" alt="Catfé Logo" id="logo"/>
           <div class="name">Catfé</div></a>
           <br>&copy; 2021 Catfé All Rights Reserved We Hope
         <footer>
+        <script>
+            $("#slideshow > div:gt(0)").hide();
+            setInterval(function() {
+            $('#slideshow > div:first')
+                .fadeOut(1000)
+                .next()
+                .fadeIn(1000)
+                .end()
+                .appendTo('#slideshow');
+            }, 3000);
+         </script>
 
       </body>
 </html>
