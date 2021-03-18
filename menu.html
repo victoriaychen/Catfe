@@ -37,15 +37,6 @@
               transition: 0.7s;
             }
 
-            /* h2 {
-                text-align: center;
-                letter-spacing: 3px;
-                width: 100%;
-                padding: 70px;
-                font-weight: 100;
-                font-size: 25px;
-            } */
-            
             h2 {
               text-align: center;
               letter-spacing: 3px;
@@ -59,7 +50,6 @@
               position: relative;
               bottom: 90px;
             }
-
             h3 {
                 text-align: center;
                 letter-spacing: 3px;
@@ -68,6 +58,7 @@
                 font-weight: 100;
                 font-size: 13px;
             }
+
             .card1{
                 position: relative;
                 margin: 50px 50px 150px 450px;
@@ -77,6 +68,7 @@
                 border-radius: 20px;
                 overflow: hidden;
             }
+
             .card2{
                 position: relative;
                 margin: -570px 0px 150px 850px;
@@ -86,10 +78,11 @@
                 border-radius: 20px;
                 overflow: hidden;
             }
+
             .card3{
                 position: relative;
                 margin: -570px 0px 150px 1250px;
-                width: 320px;
+                max-width: 320px;
                 height: 420px;
                 background-color: rgb(250, 221, 186);
                 border-radius: 20px;
@@ -105,10 +98,12 @@
                 transform: skewY(345deg);
                 transition: 0.5s;
             }
+
             .card1:hover::before{
                 top: -70%;
                 transform: skewY(390deg);
             }
+
             .card1::after{
                 content: '';
                 position: absolute;
@@ -118,6 +113,7 @@
                 font-size: 8em;
                 color: black;
             }
+
             .card1 .imgBox{
                 position: relative;
                 width: 100%;
@@ -127,15 +123,18 @@
                 padding-top: 20px;
                 z-index: 1;
             }
+
             .card1 .imgBox img{
                 max-width: 100%;
                 max-height: 80%;
                 transition: 0.5s;
             }
+
             .card1:hover .imgBox img{
                 transform: rotate(20deg);
                 max-width: 70%;
             }
+
             .card1 .contentBox{
                 position: relative;
                 padding: 20px;
@@ -165,10 +164,12 @@
                 transform: skewY(345deg);
                 transition: 0.5s;
             }
+
             .card2:hover::before{
                 top: -70%;
                 transform: skewY(390deg);
             }
+
             .card2::after{
                 content: '';
                 position: absolute;
@@ -178,6 +179,7 @@
                 font-size: 8em;
                 color: black;
             }
+
             .card2 .imgBox2{
                 position: relative;
                 width: 100%;
@@ -187,15 +189,18 @@
                 padding-top: 75px;
                 z-index: 1;
             }
+
             .card2 .imgBox2 img{
                 max-width: 95%;
                 max-height: 60%;
                 transition: 0.5s;
             }
+
             .card2:hover .imgBox2 img{
                 transform: rotate(20deg);
                 max-width: 70%;
             }
+
             .card2 .contentBox{
                 position: relative;
                 padding: 20px;
@@ -205,6 +210,7 @@
                 flex-direction: column;
                 z-index: 1;
             }
+
             .card2 .contentBox h4 {
                 text-align: center;
                 letter-spacing: 3px;
@@ -213,6 +219,7 @@
                 font-weight: 100;
                 font-size: 20px;
             }
+
             /* Card3 */
             .card3::before{
                 content: '';
@@ -224,10 +231,12 @@
                 transform: skewY(345deg);
                 transition: 0.5s;
             }
+
             .card3:hover::before{
                 top: -70%;
                 transform: skewY(390deg);
             }
+
             .card3::after{
                 content: '';
                 position: absolute;
@@ -237,6 +246,7 @@
                 font-size: 8em;
                 color: black;
             }
+
             .card3 .imgBox{
                 position: relative;
                 width: 100%;
@@ -246,15 +256,18 @@
                 padding-top: 20px;
                 z-index: 1;
             }
+
             .card3 .imgBox img{
                 max-width: 100%;
                 max-height: 80%;
                 transition: 0.5s;
             }
+
             .card3:hover .imgBox img{
                 transform: rotate(20deg);
                 max-width: 70%;
             }
+
             .card3 .contentBox{
                 position: relative;
                 padding: 20px;
@@ -264,6 +277,7 @@
                 flex-direction: column;
                 z-index: 1;
             }
+
             .card3 .contentBox h4 {
                 text-align: center;
                 letter-spacing: 3px;
@@ -272,6 +286,7 @@
                 font-weight: 100;
                 font-size: 20px;
             }
+
             @media screen and (max-width: 900px) {
                 .card1{
                     position: relative;
