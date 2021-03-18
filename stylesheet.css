@@ -18,7 +18,7 @@ body{
     overflow-x: hidden;
 }
 .logo{
-    color: black;
+    color: #000;
     text-transform: uppercase;
     cursor: pointer;
     letter-spacing: 5px;
@@ -131,4 +131,20 @@ body{
 
 .toggle .line3{
     transform: rotate(-90deg) translate( 6px,0px);
+}
+
+footer {
+  background-color: #decfac;
+  padding-top: 50px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+#logo {
+  width: 130px;
+  height: 100px;
+
 }
