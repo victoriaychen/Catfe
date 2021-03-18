@@ -13,7 +13,51 @@
       
         <title>Catfé - About</title>
         <link href="stylesheet.css" type="text/css" rel="stylesheet" />
+        <style>
+        .main {
+          font-family: 'Playfair Display', serif;
+        }
+        
+        #top {
+          text-transform: uppercase;
+          letter-spacing: 10px;
+          font-size: 100px;
+          color: #fff;
+          text-align: center;
+          background-size: cover;
+          background-image: url('images/cafespace.jpg');
+          background-position: center 100%;
+          width: 100%;
+          padding-top: 300px;
+          padding-bottom: 100px;
+          transition: 0.7s;
+        }
+        
+        h2 {
+          text-align: center;
+          letter-spacing: 3px;
+          width: 100%;
+          padding-top: 70px;
+          font-weight: 100;
+          font-size: 17px;
+          background-color: #fff;
+          border-top-left-radius: 5em;
+          border-top-right-radius: 5em;
+          position: relative;
+          bottom: 90px;
+        }
+        </style>
+        <script type="text/javascript">
+        window.onscroll = function() {scrollFunction()};
 
+        function scrollFunction() {
+          if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            document.getElementById("top").style.paddingTop = "100px";
+          } else {
+            document.getElementById("top").style.paddingTop = "300px";
+          }
+        }
+        </script>
     </head>
     <body>
         <nav>
@@ -23,11 +67,11 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="products.html">Products</a></li>
+                <li><a href="menu.html">Menu</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li><a href="cats.html">Our Cats</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="contacts.html">Contact Us</a></li>
+                <li><a href="contacts.html">Reservations</a></li>
 
             </ul>
             <div class="burger">
@@ -37,9 +81,12 @@
             </div>
 
         </nav>
-
-        
         <script src="nav.js"></script>
+        <div class="main">
+          <div id="top">About</div>
+          <h2>Insert mini summary</h2>
+          <!-- add code for rest of page here -->
+        </div>
     </body>
 
 </html>
