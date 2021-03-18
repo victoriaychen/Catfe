@@ -45,6 +45,93 @@
           position: relative;
           bottom: 90px;
         }
+        
+        h3 {
+          text-align: center;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+        }
+        
+        h4 {
+          letter-spacing: 1px;
+        }
+        
+        .miniIcons {
+          display: flex;
+          justify-content: center;
+          margin-top: 70px;
+          margin-bottom: 70px;
+          padding-left: 10%;
+          padding-right: 10%;
+        }
+        
+        .info {
+          display: flex;
+          justify-content: center;
+          margin-top: 60px;
+        }
+        
+        .block {
+          display: inline-block;
+          text-align: center;
+        }
+        
+        table {
+          background-color: #FAF3EB;
+          margin: 50px auto 70px auto;
+          width: 60%;
+          padding-top: 30px;
+          padding-bottom: 30px;
+          border-radius: 2em;
+          border: 5px solid #fff; 
+          box-shadow: 0 0 0 2pt #FAF3EB;
+        }
+        
+        .add td{
+          width: 40%;
+          vertical-align: text-top;
+          text-align: center;
+        }
+        
+        .add th{
+          width: 40%;
+          text-align: center;
+          vertical-align: text-top;
+        }
+        
+        .info td {
+          width: 60%;
+          padding-bottom: 20px;
+          padding-right: 50px;
+          padding-left: 2.5%;
+          line-height: 1.4;
+        }
+        
+        .info th {
+          text-align: right;
+          vertical-align: text-top;
+          width: 30%;
+          padding-right: 2.5%;
+          border-right: solid 3px #fff; 
+        }
+        
+        a {
+          text-decoration: none;
+          color: #A67C5B;
+        }
+        
+        a:hover {
+          text-decoration: underline;
+        }
+        
+        td.left {
+          border-right: solid 3px #fff; 
+        }
+        
+        img.icon {
+          width: 70%;
+        }
+        
         </style>
         <script type="text/javascript">
         window.onscroll = function() {scrollFunction()};
@@ -84,8 +171,73 @@
         <script src="nav.js"></script>
         <div class="main">
           <div id="top">Services</div>
-          <h2>Catfé hosts a range of events all year round, including <br> but not limited to seasonal, celebrational, and holiday events.<br> Come join us and our fur babies!</h2>
-          
+          <h2>A cat café located at the Cummings Center!<br>Whether you need a snack and drink or just some wholesome<br> cat therapy, we've got you covered</h2>
+          <h3>How to enjoy Catfé</h3>
+          <div class="miniIcons">
+            <div class="block">
+              <img class="icon" src="images/readIcon.png" alt="Person reading" />
+              <h4>Read a book</h4>
+            </div>
+            <div class="block">
+              <img class="icon" src="images/playIcon.png" alt="Person playing with cat" />
+              <h4>Play with cats</h4>
+            </div>
+            <div class="block">
+              <img class="icon" src="images/chatIcon.png" alt="People chatting" />
+              <h4>Chat with friends</h4>
+            </div>
+            <div class="block">
+              <img class="icon" src="images/workIcon.png" alt="Person working on computer" />
+              <h4>Work or study</h4>
+            </div>
+            <div class="block">
+              <img class="icon" src="images/drinkIcon.png" alt="Person enjoying drink" />
+              <h4>Enjoy snacks & drinks</h4>
+            </div>
+          </div>
+          <h3>General Info</h3>
+            <table class="info">
+            <tr>
+              <th><h4>Operation hours:</h4></th>
+              <td><h4>Mon-Fri 9:30am - 5:00pm<br>Sat-Sun 10:00am - 8:00pm<br><br>(none inclusive of special events)</h4></td>
+            </tr>
+            <tr>
+              <th><h4>For questions:</h4></th>
+              <td><h4>781-350-6823</h4></td>
+            </tr>
+            <tr>
+              <th><h4>Admissions:</h4></th>
+              <td><h4>$12 (drink included)</h4></td>
+            </tr>
+            <tr>
+              <th><h4>Note:</h4></th>
+              <td><h4>Children under the age of 10 must be accompanied</h4></td>
+            </tr>
+            <tr>
+              <th><h4>Reservations:</h4></th>
+              <td><h4>Required (walk-ins are temporarily unavaliable)</h4></td>
+            </tr>
+            <tr>
+              <th><h4>Restrictions:</h4></th>
+              <td><h4>Due to Covid-19, we have adjusted policies for the safety of our guests, staff and cats. We have limited the number of guests to 10 at any given time and guests must maintain some social distancing. It is advised to come with friends from the same suite or room as distancing will not be required. Please kindly make a reservation online to visit us.</h4></td>
+            </tr>
+           </table>
+          <h3>Add ons</h3>
+          <table class="add">
+            <tr>
+              <td><h4>Food & Drinks</h4><td>
+              <td><h4>Cat Treats</h4><td>
+            </tr>
+            <!-- <tr>
+              <td>
+              <h4>On top of the drink included in our admissions, guests may purchase other drinks and delicous snacks from our menu. Everything is freshly made and we highly recommend our (insert). Please refer to our <a href="products.html">menu</a> page for details on what is currently avaliable.</h4></td>
+              <td><h4>We sell a few types of treats that our cats love. You can give them treats as an reward for playing and hanging out with you. Their happiness when eating these treats are so adorable that it'll lift your own spirits!</h4></td>
+            </tr> -->
+            <!-- <tr>
+              <td class=""><img src="" alt=""></td>
+              <td class=""><img src="" alt=""></td>
+            </tr> -->
+          </table>
         </div>
     </body>
     
