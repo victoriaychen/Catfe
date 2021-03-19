@@ -1,108 +1,142 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name = "description" content="This is a website for assignment 2 for CS20">
-        <meta name = "author" content="Victoria Y. Chen, Willy (Wo Wei) Lin, Yiyi Wang, Sara Siqueira">
-        <meta name = "viewport" content="width=device-width, initial-scale =1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="This is a website for assignment 2 for CS20">
+    <meta name="author" content="Victoria Y. Chen, Willy (Wo Wei) Lin, Yiyi Wang, Sara Siqueira">
+    <meta name="viewport" content="width=device-width, initial-scale =1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-      
-        <title>Catfé - Cat Profiles</title>
-        <link href="stylesheet.css" type="text/css" rel="stylesheet" />
-        <style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+
+    <title>Catfé - Cat Profiles</title>
+    <link href="stylesheet.css" type="text/css" rel="stylesheet" />
+    <style>
         .main {
-          font-family: 'Playfair Display', serif;
+            font-family: 'Playfair Display', serif;
         }
-        
+
         #top {
-          text-transform: uppercase;
-          letter-spacing: 10px;
-          font-size: 100px;
-          color: #fff;
-          text-align: center;
-          background-size: cover;
-          background-image: url('images/cats.jpg');
-          background-position: center 50%;
-          width: 100%;
-          padding-top: 300px;
-          padding-bottom: 100px;
-          transition: 0.7s;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            font-size: 100px;
+            color: #fff;
+            text-align: center;
+            background-size: cover;
+            background-image: url('images/cats.jpg');
+            background-position: center 50%;
+            width: 100%;
+            padding-top: 300px;
+            padding-bottom: 100px;
+            transition: 0.7s;
         }
-        
+
         h2 {
-          text-align: center;
-          letter-spacing: 3px;
-          width: 100%;
-          padding-top: 70px;
-          font-weight: 100;
-          font-size: 17px;
-          background-color: #fff;
-          border-top-left-radius: 5em;
-          border-top-right-radius: 5em;
-          position: relative;
-          bottom: 90px;
+            text-align: center;
+            letter-spacing: 3px;
+            width: 100%;
+            padding-top: 70px;
+            font-weight: 100;
+            font-size: 17px;
+            background-color: #fff;
+            border-top-left-radius: 5em;
+            border-top-right-radius: 5em;
+            position: relative;
+            bottom: 90px;
         }
-        </style>
-        <script type="text/javascript">
-        window.onscroll = function() {scrollFunction()};
+
+        tr,
+        td {
+            text-align: center;
+            padding: 0px 15px 15px 15px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onscroll = function() {
+            scrollFunction()
+        };
 
         function scrollFunction() {
-          if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-            document.getElementById("top").style.paddingTop = "100px";
-          } else {
-            document.getElementById("top").style.paddingTop = "300px";
-          }
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("top").style.paddingTop = "100px";
+            } else {
+                document.getElementById("top").style.paddingTop = "300px";
+            }
         }
-        </script>
-    </head>
-    <body>
-        <nav>
-          <div class="logo">    
-            <a href="index.html"><img src="images/full_logo.jpg" alt="logo"></a>   
-          </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="cats.html">Our Cats</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contacts.html">Reservations</a></li>
+    </script>
+</head>
 
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </nav>
-        <script src="nav.js"></script>
-        <div class="main">
-          <div id="top">Our Cats</div>
-          <h2>Insert mini summary</h2>
-          <table style="width:100%">
-              <tr>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-               
-              </tr>
-              <tr>
-
-              </tr>
-            </table>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="images/full_logo.jpg" alt="logo"></a>
         </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="cats.html">Our Cats</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contacts.html">Reservations</a></li>
+
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <script src="nav.js"></script>
+    <div class="main">
+        <div id="top">Our Cats</div>
+        <h2>While you are at our cafe, you will be accompany by our adorable cats 🐱!</h2>
+        <table style="width:100%">
+            <tr>
+                <td><img src="images/cat1.jpg" alt="honey"></td>
+                <td>
+                    <p>Name: Honey</p>
+                    <p>Age: 6 months old</p>
+                    <p>Favorite things to do: Playing with feather teaser! </p>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="images/cat2.jpg" alt="jack"></td>
+                <td>
+                    <p>Name: Jack</p>
+                    <p>Age: 3 months old</p>
+                    <p>Favorite things to do: Laying down and enjoy sunshine. ☀️ </p>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="images/cat3.jpg" alt="garfield"></td>
+                <td>
+                    <p>Name: Garfield</p>
+                    <p>Age: 7 years old </p>
+                    <p>Favorite things to do: Sleep! But I will be down to</p>
+                    <p>lay when there are treats ;) </p>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="images/cat4.jpg" alt="ash"></td>
+                <td>
+                    <p>Name: Ash</p>
+                    <p>Age: 3 years old </p>
+                    <p>Favorite things to do: Getting belly rubs! </p>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <footer>
+        <a href="index.html"><img src="images/catfeLogo.png" alt="Catfé Logo" id="logo" />
+            <div class="name">Catfé</div>
+        </a>
+        <br>&copy; 2021 Catfé All Rights Reserved We Hope
         <footer>
-          <a href="index.html"><img src="images/catfeLogo.png" alt="Catfé Logo" id="logo"/>
-          <div class="name">Catfé</div></a>
-          <br>&copy; 2021 Catfé All Rights Reserved We Hope
-        <footer>
-    </body>
+</body>
 
 </html>
