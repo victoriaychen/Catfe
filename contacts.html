@@ -55,15 +55,67 @@
             <p>Last Name: <input type="text" name="lname" /></p>
             <p>Email: <input type="text" name="email" /></p>
             <p>Phone number: <input type="text" name="phoneNumber" /></p>
-            <p>Number of guest: <input type="text" name="guests" /></p>
+            <p>Number of guests: <input type="text" name="guests" /></p>
             <br />
+            <div id="demo-booking-single"></div>
             <input type="submit" value="click here to submit" />
             <input type="reset" value="clear this form" />
         </form>
     </div>
 
     <script type="text/javascript">
+        function validateForm() {
 
+        }
+
+        function displayCalendar() {
+            var now = new Date(),
+                currYear = now.getFullYear(),
+                currMonth = now.getMonth(),
+                currDay = now.getDate(),
+                min = new Date(currYear, currMonth, currDay),
+                max = new Date(currYear, currMonth + 6, currDay);
+
+            mobiscroll.datepicker('#demo-booking-single', {
+                controls: ['calendar'],
+                min: min,
+                max: max,
+                onPageLoading: function(event, inst) {
+                    getPrices(event.firstDay, function callback(bookings) {
+                        inst.setOptions({
+                            labels: bookings.labels,
+                            invalid: bookings.invalid
+                        });
+                    });
+                }
+            });
+        }
+
+        function getPrices(d, callback) {
+            var invalid = [],
+                labels = [];
+
+            mobiscroll.util.http.getJson('//trial.mobiscroll.com/getprices/?year=' + d.getFullYear() + '&month=' + d.getMonth(), function(bookings) {
+                for (var i = 0; i < bookings.length; ++i) {
+                    var booking = bookings[i],
+                        d = new Date(booking.d);
+
+                    if (booking.price > 0) {
+                        labels.push({
+                            start: d,
+                            title: '$' + booking.price,
+                            textColor: '#e1528f'
+                        });
+                    } else {
+                        invalid.push(d);
+                    }
+                }
+                callback({
+                    labels: labels,
+                    invalid: invalid
+                });
+            }, 'jsonp');
+        }
     </script>
 
     <footer>
