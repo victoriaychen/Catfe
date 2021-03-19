@@ -13,7 +13,6 @@
       
         <title>Catfé - Contact</title>
         <link href="stylesheet.css" type="text/css" rel="stylesheet" />
-
         <style> 
 
 
@@ -166,6 +165,15 @@
         <script src="nav.js"></script>
 
         <script language = "javascript">
+            //If user was directed from events page then will check radio button automatically
+            window.onload = function() {
+              if (0 <= localStorage.getItem("eventChosen") && 7 >= localStorage.getItem("eventChosen")) {
+                var i = localStorage.getItem("eventChosen")
+                document.getElementsByName("event")[i].checked = true;
+                localStorage.setItem("eventChosen",10);
+              }
+            };
+        
             function validateForm() {
                 // use javascript array for events list 
                 var name = document.forms["reserve"]["name"].value;
