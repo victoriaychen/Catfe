@@ -1,64 +1,78 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name = "description" content="This is a website for assignment 2 for CS20">
-        <meta name = "author" content="Victoria Y. Chen, Willy (Wo Wei) Lin, Yiyi Wang, Sara Siqueira">
-        <meta name = "viewport" content="width=device-width, initial-scale =1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="This is a website for assignment 2 for CS20">
+    <meta name="author" content="Victoria Y. Chen, Willy (Wo Wei) Lin, Yiyi Wang, Sara Siqueira">
+    <meta name="viewport" content="width=device-width, initial-scale =1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-      
-        <title>Catfé - Contact</title>
-        <link href="stylesheet.css" type="text/css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
-    </head>
-    <body>
-        <nav>
-          <div class="logo">    
-            <a href="index.html"><img src="images/full_logo.jpg" alt="logo"></a>   
-          </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="cats.html">Our Cats</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contacts.html">Reservations</a></li>
 
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
+    <title>Catfé - Contact</title>
+    <link href="stylesheet.css" type="text/css" rel="stylesheet" />
+    <style>
+        .main {
+            padding: 50px 0;
+        }
 
-        </nav>
+        .myForm {
+            text-align: center;
+        }
+    </style>
+</head>
 
-        <form>
-            <h1>RESERVATION FORM</h1>
-            <p>NAME<input type="TEXT" size="20" maxlength="99" /></p>
-            <p>AGE<input type="TEXT" size="12" maxlength="99" /></p>
-            <p>ADDRESS<input type="TEXT" size="42" maxlength="99" /></p>
-            <p>EMAIL<input type="TEXT" size="30" maxlength="99" /></p>
-            <p>TELEPHONE<input type="TEXT" size="10" maxlength="99" /></p>
-            <br/>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="images/full_logo.jpg" alt="logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="cats.html">Our Cats</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contacts.html">Reservations</a></li>
+
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+
+    </nav>
+    <script src="nav.js"></script>
+    <div class="main">
+        <form class="myForm" onsubmit="return validateForm()">
+            <h1>RESERVATION FORM</h1><br>
+            <p>First Name: <input type="text" name="fname" /></p>
+            <p>Last Name: <input type="text" name="lname" /></p>
+            <p>Email: <input type="text" name="email" /></p>
+            <p>Phone number: <input type="text" name="phoneNumber" /></p>
+            <p>Number of guest: <input type="text" name="guests" /></p>
+            <br />
             <input type="submit" value="click here to submit" />
             <input type="reset" value="clear this form" />
         </form>
-        <script src="nav.js"></script>
-        
-        <!-- add code here -->
-        
+    </div>
+
+    <script type="text/javascript">
+
+    </script>
+
+    <footer>
+        <a href="index.html"><img src="images/catfeLogo.png" alt="Catfé Logo" id="logo" />
+            <div class="name">Catfé</div>
+        </a>
+        <br>&copy; 2021 Catfé All Rights Reserved We Hope
         <footer>
-          <a href="index.html"><img src="images/catfeLogo.png" alt="Catfé Logo" id="logo"/>
-          <div class="name">Catfé</div></a>
-          <br>&copy; 2021 Catfé All Rights Reserved We Hope
-        <footer>
-    </body>
-    
+</body>
+
 
 </html>
