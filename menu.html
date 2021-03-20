@@ -23,6 +23,7 @@
             
             #top {
               text-transform: uppercase;
+              font-weight: normal;
               letter-spacing: 10px;
               font-size: 100px;
               color: #fff;
@@ -37,14 +38,6 @@
               transition: 0.7s;
             }
 
-            /* h2 {
-                text-align: center;
-                letter-spacing: 3px;
-                width: 100%;
-                padding: 70px;
-                font-weight: 100;
-                font-size: 25px;
-            } */
             h2 {
               text-align: center;
               letter-spacing: 3px;
@@ -58,6 +51,14 @@
               position: relative;
               bottom: 90px;
             }
+            
+            h2.subtitle{
+              letter-spacing: 3px;
+              text-transform: uppercase;
+              font-size: 20px;
+              font-weight: 600;
+            }
+            
             h3 {
                 text-align: center;
                 letter-spacing: 3px;
@@ -66,45 +67,20 @@
                 font-weight: 100;
                 font-size: 13px;
             }
-            .card1{
+            .card1, .card2, .card3, .card4, .card5, .card6 {
                 position: relative;
                 margin: auto;
                 margin-bottom: 5%;
                 margin-top: -2%;
                 /* margin: 50px 50px 150px 450px; */
-                width: 320px;
+                width: 600px;
                 height: 420px;
                 background-color: rgb(250, 221, 186);
                 border-radius: 20px;
                 overflow: hidden;
             }
-            .card2{
-                position: relative;
-                margin: auto;
-                margin-bottom: 5%;
-                margin-top: -2%;
-                /* margin: -570px 0px 150px 850px; */
-                width: 320px;
-                height: 420px;
-                background-color: rgb(250, 221, 186);
-                border-radius: 20px;
-                overflow: hidden;
 
-            }
-            .card3{
-                position: relative;
-               
-                /* margin: -570px 0px 150px 1250px; */
-                margin: auto;
-                margin-bottom: 5%;
-                margin-top: -2%;
-                width: 320px;
-                height: 420px;
-                background-color: rgb(250, 221, 186);
-                border-radius: 20px;
-                overflow: hidden;
-            }
-            .card1::before{
+            .card1::before, .card2::before, .card3::before, .card4::before, .card5::before, .card6::before {
                 content: '';
                 position: absolute;
                 top: -50%;
@@ -114,11 +90,11 @@
                 transform: skewY(345deg);
                 transition: 0.5s;
             }
-            .card1:hover::before{
+            .card1:hover::before, .card2:hover::before, .card3:hover::before, .card4:hover::before, .card5:hover::before, .card6:hover::before{
                 top: -70%;
                 transform: skewY(390deg);
             }
-            .card1::after{
+            .card1::after, .card2::after, .card3::after, .card4::after, .card5::after, .card6::after{
                 content: '';
                 position: absolute;
                 bottom: 0;
@@ -127,10 +103,22 @@
                 font-size: 8em;
                 color: black;
             }
+            .card1 .contentBox h4, .card2 .contentBox h4, .card3 .contentBox h4, .card4 .contentBox h4, .card5 .contentBox h4, .card6 .contentBox h4 {
+                text-align: center;
+                letter-spacing: 3px;
+                width: 100%;
+                margin-top: -50px;
+                font-weight: 100;
+                font-size: 20px;
+            }
+            
+            /* Card 1 */
             .card1 .imgBox{
                 position: relative;
-                width: 100%;
+                width: 60%;
                 display: flex;
+                left: 50%;
+                transform: translateX(-50%);
                 justify-content: center;
                 align-items: center;
                 padding-top: 20px;
@@ -154,47 +142,19 @@
                 flex-direction: column;
                 z-index: 1;
             }
-            .card1 .contentBox h4 {
-                text-align: center;
-                letter-spacing: 3px;
-                width: 100%;
-                margin-top: -50px;
-                font-weight: 100;
-                font-size: 20px;
-            }
 
-            /* Card2 */
-            .card2::before{
-                content: '';
-                position: absolute;
-                top: -50%;
-                width: 100%;
-                height: 100%;
-                background: rgb(248, 244, 234);
-                transform: skewY(345deg);
-                transition: 0.5s;
-            }
-            .card2:hover::before{
-                top: -70%;
-                transform: skewY(390deg);
-            }
-            .card2::after{
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                font-weight: 600;
-                font-size: 8em;
-                color: black;
-            }
+            /* Card2 */        
             .card2 .imgBox2{
                 position: relative;
-                width: 100%;
+                width: 50%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                padding-top: 75px;
+                padding-top: 120px;
+                padding-bottom: 20px;
                 z-index: 1;
+                left: 52%;
+                transform: translateX(-50%);
             }
             .card2 .imgBox2 img{
                 max-width: 95%;
@@ -214,46 +174,17 @@
                 flex-direction: column;
                 z-index: 1;
             }
-            .card2 .contentBox h4 {
-                text-align: center;
-                letter-spacing: 3px;
-                width: 100%;
-                margin-top: -50px;
-                font-weight: 100;
-                font-size: 20px;
-            }
             /* Card3 */
-            .card3::before{
-                content: '';
-                position: absolute;
-                top: -50%;
-                width: 100%;
-                height: 100%;
-                background: rgb(248, 244, 234);
-                transform: skewY(345deg);
-                transition: 0.5s;
-            }
-            .card3:hover::before{
-                top: -70%;
-                transform: skewY(390deg);
-            }
-            .card3::after{
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                font-weight: 600;
-                font-size: 8em;
-                color: black;
-            }
             .card3 .imgBox{
                 position: relative;
-                width: 100%;
+                width: 70%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 padding-top: 20px;
                 z-index: 1;
+                left: 52%;
+                transform: translateX(-50%);
             }
             .card3 .imgBox img{
                 max-width: 100%;
@@ -266,53 +197,122 @@
             }
             .card3 .contentBox{
                 position: relative;
-                padding: 20px;
+                padding: 0px 20px;
+                bottom: 80px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
                 z-index: 1;
             }
-            .card3 .contentBox h4 {
-                text-align: center;
-                letter-spacing: 3px;
-                width: 100%;
-                margin-top: -50px;
-                font-weight: 100;
-                font-size: 20px;
+            
+            /* Card 4 */
+            .card4 .imgBox{
+                position: relative;
+                width: 80%;
+                display: flex;
+                left: 50%;
+                transform: translateX(-50%);
+                justify-content: center;
+                align-items: center;
+                padding-top: 80px;
+                z-index: 1;
             }
+            .card4 .imgBox img{
+                max-width: 100%;
+                max-height: 80%;
+                transition: 0.5s;
+            }
+            .card4:hover .imgBox img{
+                transform: rotate(20deg);
+                max-width: 70%;
+            }
+            .card4 .contentBox{
+                position: relative;
+                padding: 0px 20px;
+                bottom: 230px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                z-index: 1;
+            }
+            
+            /* Card 5 */
+            .card5 .imgBox2{
+                position: relative;
+                width: 70%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 90px;
+                z-index: 1;
+                left: 52%;
+                transform: translateX(-50%);
+            }
+            .card5 .imgBox2 img{
+                max-width: 95%;
+                max-height: 60%;
+                transition: 0.5s;
+            }
+            .card5:hover .imgBox2 img{
+                transform: rotate(20deg);
+                max-width: 70%;
+            }
+            .card5 .contentBox{
+                position: relative;
+                padding: 0px 20px;
+                bottom: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                z-index: 1;
+            }
+            
+            /* Card 6 */
+            .card6 .imgBox{
+                position: relative;
+                width: 75%;
+                display: flex;
+                left: 50%;
+                transform: translateX(-50%);
+                justify-content: center;
+                align-items: center;
+                padding-top: 40px;
+                z-index: 1;
+            }
+            .card6 .imgBox img{
+                max-width: 100%;
+                max-height: 80%;
+                transition: 0.5s;
+            }
+            .card6:hover .imgBox img{
+                transform: rotate(20deg);
+                max-width: 70%;
+            }
+            .card6 .contentBox{
+                position: relative;
+                padding: 0px 20px;
+                bottom: 160px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                z-index: 1;
+            }
+            
+            
             @media screen and (max-width: 900px) {
-                .card1{
+                .card1, .card2, .card3, .card4, .card5, .card6 {
                     position: relative;
-                    width: 320px;
+                    width: 600px;
                     height: 420px;
                     background-color: rgb(250, 221, 186);
                     border-radius: 20px;
                     margin: auto;
                     margin-bottom: 5%;
                     overflow: hidden;
-                    display: flex;
-                }
-                .card2{
-                    position: relative;
-                    width: 320px;
-                    height: 420px;
-                    background-color: rgb(250, 221, 186);
-                    border-radius: 20px;
-                    overflow: hidden;
-                    margin: auto;
-                    margin-bottom: 5%;
-                    display: flex;
-                }
-                .card3{
-                    position: relative;
-                    width: 320px;
-                    height: 420px;
-                    background-color: rgb(250, 221, 186);
-                    border-radius: 20px;
-                    overflow: hidden;
-                    margin: auto;
-                    margin-bottom: 5%;
                     display: flex;
                 }
             }
@@ -354,16 +354,16 @@
         </nav>
         <script src="nav.js"></script>
         <div class="main">
-            <div id="top">Menu</div>
+            <h1 id="top">Menu</h1>
             <h2>Catfé is home to many fresh products! <br>Made of 100% Certified Organic and Fair Trade</h2>
             <!-- Café Options -->
-            <h2><strong>Catfé Drinks</strong></h2>
+            <h2 class="subtitle">Catfé Drinks</h2>
             <div class="card1">
                 <div class="imgBox">
                     <img src="images/cat-latte.png">
                 </div>
                 <div class="contentBox">
-                    <h4 style="margin-top: -5%;">Signature Catfé Latte <br><br><br>Made with fresh beans from Columbia</h4>
+                    <h4 style="margin-top: -5%;">Signature Catfé Latte <br><br><br>Made with roasted Columbian beans</h4>
                 </div>
             </div> 
             <div class="card2">
@@ -371,7 +371,7 @@
                     <img src="images/chai-latte.png">
                 </div>
                 <div class="contentBox">
-                    <h4 style="margin-top: -12%;"> Chai Latte<br><br><br>Nice and cozy</h4>
+                    <h4 style="margin-top: -12%;"> Chai Latte<br><br><br>Spiced perfectly for winter days</h4>
                 </div>
             </div>
             <div class="card3">
@@ -379,36 +379,36 @@
                     <img src="images/hot-tea.png">
                 </div>
                 <div class="contentBox">
-                    <h4 style="margin-top: 18%;"> Hot Tea<br><br><br>Simple Hot Tea</h4>
+                    <h4 style="margin-top: 18%;"> Hot Tea<br><br><br>We offer green teas, red teas and black teas</h4>
                 </div>
             </div>
 
 
             <!-- Snacks Products -->
             <br>
-            <h2><strong>Catfé Food</strong></h2>
-            <div class="card1">
+            <h2 class="subtitle">Catfé Food</h2>
+            <div class="card4">
                 <div class="imgBox">
                     <img src="images/muffins.png">
                 </div>
                 <div class="contentBox">
-                    <h4 style="margin-top: 35%;">Muffins<br><br><br>Variety of Muffins</h4>
+                    <h4 style="margin-top: 35%;">Muffins<br><br><br>Blueberry, poppyseed, lemon and chocolate</h4>
                 </div>
             </div>
-            <div class="card2">
+            <div class="card5">
                 <div class="imgBox2">
                     <img src="images/matcha-cake.png">
                 </div>
                 <div class="contentBox">
-                    <h4 style="margin-top: 0%;"> Matcha Cake<br><br><br>Made with premium matcha</h4>
+                    <h4 style="margin-top: 0%;"> Matcha Cake<br><br><br>Made with premium matcha from scratch</h4>
                 </div>
             </div>
-            <div class="card3">
+            <div class="card6">
                 <div class="imgBox">
                     <img src="images/dango.png">
                 </div>
                 <div class="contentBox">
-                    <h4 style="margin-top: 32%;"> Catfé Dango <br><br><br>Purrfectly Sweet.</h4>
+                    <h4 style="margin-top: 32%;"> Catfé Dango <br><br><br>The purrfect three flavored treat</h4>
                 </div>
             </div>
 
