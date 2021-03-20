@@ -134,13 +134,13 @@
             label{
                 font-size: 50px;
                 font-weight: 500;
-                color: #000;
+                color: rgb(255, 255, 255);
                 cursor: pointer;
             }
             label span{
                 display: inline-block;
                 object-fit: cover;
-                font-size: 50px;
+                font-size: 100px;
                 font-weight: 500;
                 transition: 0.3s cubic-bezier(0.68,-0.55,0.265,1.55);
             }
@@ -240,7 +240,7 @@
          </div>
          <div class="main">
             <div class="wave">
-                <label>Welcome!</label>
+                <label>Catfé</label>
             </div>  
          </div>
         <div id="subtitle">
@@ -290,6 +290,13 @@
             text.forEach(label =>{
             label.innerHTML = label.textContent.split('').map((text, wave) =>
                 `<span style="transition-delay: ${wave * 50}ms">${text}</span>`).join('');
+            });
+            $(window).scroll(function(){
+              if($(this).scrollTop() > 0){
+                $('.wave').fadeOut();
+              }else{
+                $('.wave').fadeIn();
+              }
             });
          </script>
 
