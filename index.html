@@ -15,6 +15,18 @@
       
         <title>Catfé - Home</title>
         <link href="stylesheet.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript">
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            document.getElementById("slideshow").style.height = "200px";
+          } else {
+            document.getElementById("slideshow").style.height = "600px";
+          }
+        }
+
+        </script>
         <style>
             
             @import url(https://fonts.googleapis.com/css?family=Fredoka+One);
@@ -25,37 +37,76 @@
                 margin-left: 50%;
                 text-shadow: 0 0 5px black;
             }
-            .block1 {
+            
+            #subtitle {
+              text-align: center;
+              letter-spacing: 3px;
+              width: 100%;
+              font-weight: 100;
+              font-size: 17px;
+              background-color: #fff;
+              border-top-left-radius: 5em;
+              border-top-right-radius: 5em;
+              position: relative;
+              bottom: 80px;
+              padding-top: 70px;
+            }
+            
+            #subtitle h3 {
+              text-transform: uppercase;
+              font-size: 30px;
+              font-weight: 300;
+              padding-bottom: 30px;
+            }
+            
+            #subtitle h4 {          
+              font-weight: 300;
+            }
+            
+            .photos {
+              display: flex;
+              justify-content: center;
+              padding-bottom: 50px;
+            }
+            
+            .photos img {
+              width: 20%;
+              margin: 0 1%;
+            }
+            
+            
+            /* .block1 {
                 display: inline-block;
                 color:#000000;
                 font-weight: bold;
                 font-size: 40px;
-                max-width: 800px;
-                max-height: 800px;
                 height: auto; 
                 width: auto; 
                 margin-left: 50%;   
                 z-index: 2;
-            }
+            } */
 
-            .main {
+            /* .main {
                 background-color: rgb(255, 255, 255);
                 background-position: center;
                 background-size: cover;
                 width: 100%;
                 height: 40vh;
                 padding-top: 5%;
-            }
+            } */
             #slideshow { 
                 position: relative; 
+                overflow: hidden;
+                background-size: cover;
                 width: 100%; 
-                height: 400px; 
-                box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+                height: 600px; 
                 z-index: -200;
+                transition: 0.7s;
             }
             #slideshow img{
-                width: 200vh; 
-                height: 400px; 
+                width: 100%; 
+                margin-top: -10%;
+                transform: translateY(10%);
             }
 
             #slideshow > div { 
@@ -77,6 +128,7 @@
             }
             label span{
                 display: inline-block;
+                object-fit: cover;
                 font-size: 50px;
                 font-weight: 500;
                 transition: 0.3s cubic-bezier(0.68,-0.55,0.265,1.55);
@@ -117,22 +169,22 @@
         <!-- Main Body -->
         <div id="slideshow">
             <div>
-              <img src="images/slide1.JPG">
+              <img src="images/home1.JPG">
             </div>
             <div>
-              <img src="images/slide2.JPG">
+              <img src="images/home2.JPG">
             </div>
             <div>
-              <img src="images/slide3.JPG">
+              <img src="images/home3.JPG">
             </div>
             <div>
-                <img src="images/slide4.JPG">
-              </div>
-            <div>
-                <img src="images/slide5.JPG">
+                <img src="images/home4.JPG">
             </div>
             <div>
-                <img src="images/slide6.JPG">
+                <img src="images/home5.JPG">
+            </div>
+            <div>
+                <img src="images/home6.JPG">
             </div>
          </div>
          <div class="main">
@@ -140,12 +192,22 @@
                 <label>Welcome!</label>
             </div>  
          </div>
+        <div id="subtitle">
+          <h3>Our Mission</h3>
+          <h4>To bring Jumbos joy through the company of our adorable cats, coupled <br>with exceptional food and beverages served in a cozy environment</h4>
+        </div>
+        <div class="photos">
+        <img src="images/slide1.jpg" alt="Sitting corner">
+        <img src="images/slide2.jpg" alt="Cat staring">
+        <img src="images/slide3.jpg" alt="Cat walking on platforms">
+        </div>
     
         <footer>
           <a href="index.html"><img src="images/catfeLogo.png" alt="Catfé Logo" id="logo"/>
           <div class="name">Catfé</div></a>
           <br>&copy; 2021 Catfé All Rights Reserved We Hope
         <footer>
+        
         <script>
             $("#slideshow > div:gt(0)").hide();
             setInterval(function() {
