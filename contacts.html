@@ -174,7 +174,7 @@
             <div id="time_slot_selection" style="display: none; text-align: center;"><span id="timeError"></span></div>
 
             <p>Day (MM/DD/YYYY)*: <input type="TEXT" name="day" size="15" maxlength="99" id="datepicker" /><span id="dayError"></span></p>
-            <p>Requests: <input type="TEXT"/></p>
+            <p>Requests: <textarea rows="3" cols="30" name="request" id="request"></textarea></p>
             <br />
             <div class="submit">
                 <input type="submit" class="button" value="Submit" />
@@ -341,10 +341,10 @@
             // isDefault();
             eventPreselect();
         }
-        
+
         //Selects event automatically if redirected from events page
         function eventPreselect() {
-          if (0 <= localStorage.getItem("eventChosen") && 7 >= localStorage.getItem("eventChosen")) { 
+          if (0 <= localStorage.getItem("eventChosen") && 7 >= localStorage.getItem("eventChosen")) {
           var i = parseInt(localStorage.getItem("eventChosen")) + 1;
           document.getElementsByClassName("event_option")[i].selected = true;
           localStorage.setItem("eventChosen",10);
