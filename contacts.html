@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="This is a website for assignment 2 for CS20">
@@ -190,8 +189,6 @@
             <div class="submit">
                 <input type="submit" class="button" value="Submit" />
                 <input type="reset" class="button" value="Clear Form" onclick="return validateForm()" />
-
-                <h4 id="thank"></h4>
             </div>
         </form>
     </div>
@@ -231,7 +228,6 @@
         // display radio buttons for timeslots specific to event selected
         //
 
-
         function validateForm() {
             var name = required("name");
             var email = required("email");
@@ -247,10 +243,13 @@
                        document.getElementById("timeError").innerHTML = "   Please choose an event.";
                        return false;
             }
-
+            
             // display the confirmation of their reservation
-            //displayMessage();
-            return (name & email & phone & day & verifyEmail & vaildPhone & vaildEvent);
+            if (name && email && phone && day && verifyEmail && vaildPhone && vaildEvent){
+                alert("Thank you for making a reservation! We look forward to seeing you soon.");
+            }
+
+            return (name && email && phone && day && verifyEmail && vaildPhone && vaildEvent);
         }
 
         function required(idName) {
@@ -295,13 +294,6 @@
                        return false;
             }
             return true;
-        }
-
-        function displayMessage() {
-            if(validateForm() == true){
-                var message = "Thank you for making a reservation! We look forward to seeing you soon.";
-                document.getElementById("thank").innerHTML = message;
-            }
         }
 
         function showDate() {
