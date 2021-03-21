@@ -150,25 +150,19 @@
     </div>
 
     <div class = "form">
-        <form name = "reserve">
+        <form name = "reserve" onsubmit = "return validateForm()">
             <h2> Make a reservation </h2>
-            <p>Name: <input type="TEXT" name = "name" size="20" maxlength="99" /></p>
-            <p>Email: <input type="TEXT" name = "email" size="30" maxlength="99" /></p>
-            <p>Phone number: <input type="TEXT" name = "phone" size="20" maxlength="99" /></p>
-            <p>Size of party: 
+            <p>Name*: <input type="TEXT" name = "name" size="20" maxlength="99" /></p>
+            <p>Email*: <input type="TEXT" name = "email" size="30" maxlength="99" /></p>
+            <p>Phone number*: <input type="TEXT" name = "phone" size="20" maxlength="99" /></p>
+            <p>Size of party*: 
             <select name = "size">
                 <option value = "1">1</option>
                 <option value = "2">2</option>
                 <option value = "3">3</option>
                 <option value = "4">4</option>
-                <option value = "5">5</option>
-                <option value = "6">6</option>
-                <option value = "7">7</option>
-                <option value = "8">8</option>
-                <option value = "9">9</option>
-                <option value = "10">10</option>
             </select></p>
-            <p style = "padding-bottom: 5px"> Choose an event: 
+            <p style = "padding-bottom: 5px"> Choose an event*: 
             <select id = "selectEvents" onchange="showTimeSlots();"> </select> </p>
             <div id="time_slot_selection" style="display: none; text-align: center;">
             </div>
@@ -191,24 +185,14 @@
                     document.writeln(s);
                 </script> -->
             <!-- </table> -->
-            <!-- <div class = "events">
-                <input type="radio" name="event">  Cookie Fiesta <br/>
-                <input type="radio" name="event">  Catfé Brewing <br/>
-                <input type="radio" name="event">  Cat Backing <br/>
-                <input type="radio" name="event">  Movie Night <br/>
-                <input type="radio" name="event">  Gaming Club <br/>
-                <input type="radio" name="event">  Latté Cat Art <br/>
-                <input type="radio" name="event">  Cat-o-ween <br/>
-                <input type="radio" name="event">  Kittens Greet & Meet <br/>
-                <input type="radio" name="event" onclick = "showDate()">  General Visit <br/>
-            </div> -->
+        
             <p>Day (MM/DD/YYYY): <input type="TEXT" name = "day" size="15" maxlength="99" /></p>
 
 
             <br/>
             <div class = "submit">
-                <input type="submit" class = "button" value="Submit" onclick = "validateForm()"/>
-                <input type="reset" class = "button" value="Clear Form" />
+                <input type="submit" class = "button" value="Submit"/>
+                <input type="reset" class = "button" value="Clear Form" onclick = "return validateForm()"/>
 
                 <h4 id = "thank"></h4>
             </div>
@@ -237,7 +221,8 @@
                 new events("Gaming Club", "Saturday", 21, 23),
                 new events("Latte Cat Art", "Sunday", 10, 11), 
                 new events("Kitten Greet and Meet", "Friday", 14, 17),
-                new events("General Visit", "Cleverday", 25, 26)
+                new events("General Visit", "Monday",9, 17)
+                // if user selects general visit, then the calendar comes up 
             );
 
             function selectEvents(events_arr) {
@@ -265,32 +250,41 @@
                 // if didn't enter last name, alert
                 if (name == "") {
                     alert("Please enter your name.");
+                    document.forms["reserve"]["name"].focus();
                     return false;                  
                 }
 
                 if (email == "") {
                     alert("Please enter your email address.");
+                    document.forms["reserve"]["email"].focus();
                     return false;
                 }
             
-                if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(reserve.email.value))
+                if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(reserve.email.value))
                 {
-                    return true;
-                }
                     alert("You have entered an invalid email address!")
+                    document.forms["reserve"]["email"].focus();
                     return false;
-
+                } 
                 // if the phone number is not valid, display an alert
                 var phoneNumber = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
                 if (phone == "" || !phone.match(phoneNumber)){
-                alert("Please enter a valid phone number in the form of XXX XXX XXXX");
+                alert("Please enter a valid phone number.");
+                document.forms["reserve"]["phone"].focus();
                 return false;
                 }
 
-                // if select input is still at '--', alert
+                // if no event is selected, display an alert
+                if (document.getElementsByClassName("event_option")[0].selected) {
+                    alert("Please choose an event");
+                    return false;
+                }
 
+                // ensure at least one time slot is selected 
+
+
+                // display the confirmation of their reservation 
                 displayMessage();
-                // call a function to send an email with the information 
                 return true;
 
             }
@@ -331,7 +325,7 @@
                     return;
                 }
 
-             
+                // <input type="radio" id="put UID here">00:00
                 // make time slots
                 new_html = "";
                 for (var i = start_time; i < end_time; i++) {
@@ -358,6 +352,7 @@
 
         </script>
         
+        <!-- add code here -->
         
         <footer>
           <a href="index.html"><img src="images/catfeLogo.png" alt="Catfé Logo" id="logo"/>
