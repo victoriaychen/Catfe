@@ -19,6 +19,7 @@
         
         #top {
           text-transform: uppercase;
+          font-weight: normal;
           letter-spacing: 10px;
           font-size: 100px;
           color: #fff;
@@ -54,6 +55,11 @@
         
         h4 {
           letter-spacing: 1px;
+          text-align: left;
+        }
+        
+        .block h4 {
+          text-align: center;
         }
         
         .miniIcons {
@@ -87,16 +93,30 @@
           box-shadow: 0 0 0 2pt #FAF3EB;
         }
         
-        .add td{
-          width: 40%;
-          vertical-align: text-top;
-          text-align: center;
+        table.add {
+          margin-top: 70px;
         }
         
-        .add th{
-          width: 40%;
+        .add th h4 {
           text-align: center;
+          text-transform: uppercase;
+        }
+        
+        .add td{
+          width: 25%;
           vertical-align: text-top;
+          padding-left: 25px;
+          padding-right: 25px;
+          padding-top: 20px;
+        }
+        
+        .add th {
+          width: 25%;
+          padding-bottom: 5px;
+        }
+        
+        .add td img {
+          width: 100%;
         }
         
         .info td {
@@ -108,12 +128,20 @@
         }
         
         .info th {
-          text-align: right;
           vertical-align: text-top;
           width: 30%;
           padding-right: 2.5%;
           border-right: solid 3px #fff; 
         }
+        
+        .left {
+          border-right: solid 3px #fff; 
+        }
+        
+        .info th h4 {
+          text-align: right;
+        }
+        
         
         a {
           text-decoration: none;
@@ -126,6 +154,36 @@
         
         img.icon {
           width: 70%;
+        }
+        
+        .rules {
+          display: inline-block;
+          text-align: center;
+          width: 18%;
+          background-color: #FAF3EB;
+          padding: 30px 5px;
+          margin: 70px 20px;
+          border-radius: 2em;
+          border: 5px solid #fff; 
+          box-shadow: 0 0 0 2pt #FAF3EB;
+        }
+        
+        .rules h4 {
+          text-align: center;
+          padding-left: 15px;
+          width: 90%;
+          padding-top: 20px;
+          color: #A67C5B;
+        }
+        
+        .requests {
+          display: flex;
+          justify-content: center;
+        }
+        
+        .rules img{
+          width: 70%;
+          
         }
         
         </style>
@@ -166,7 +224,7 @@
         </nav>
         <script src="nav.js"></script>
         <div class="main">
-          <div id="top">Services</div>
+          <h1 id="top">Services</h1>
           <h2>A cat café located at the Cummings Center!<br>Whether you need a snack and drink or just some wholesome<br> cat therapy, we've got you covered</h2>
           <h3>How to enjoy Catfé</h3>
           <div class="miniIcons">
@@ -199,7 +257,11 @@
             </tr>
             <tr>
               <th><h4>For questions:</h4></th>
-              <td><h4>781-350-6823</h4></td>
+              <td><h4>(510) 501-2274</h4></td>
+            </tr>
+            <tr>
+              <th><h4>Email:</h4></th>
+              <td><h4>info@catfé.com</h4></td>
             </tr>
             <tr>
               <th><h4>Admissions:</h4></th>
@@ -221,19 +283,33 @@
           <h3>Add ons</h3>
           <table class="add">
             <tr>
-              <td><h4>Food & Drinks</h4><td>
-              <td><h4>Cat Treats</h4><td>
+              <th class="left"><h4>Food & Drinks</h4></th>
+              <th><h4>Cat Treats</h4></th>
             </tr>
-            <!-- <tr>
-              <td>
-              <h4>On top of the drink included in our admissions, guests may purchase other drinks and delicous snacks from our menu. Everything is freshly made and we highly recommend our (insert). Please refer to our <a href="products.html">menu</a> page for details on what is currently avaliable.</h4></td>
+            <tr>
+              <td class="left"><h4>Guests may purchase drinks and other delicous snacks from our menu. Everything is freshly made and we highly recommend our muffins. Please refer to our <a href="products.html">menu</a> page for details on what is currently avaliable.</h4></td>
               <td><h4>We sell a few types of treats that our cats love. You can give them treats as an reward for playing and hanging out with you. Their happiness when eating these treats are so adorable that it'll lift your own spirits!</h4></td>
-            </tr> -->
-            <!-- <tr>
-              <td class=""><img src="" alt=""></td>
-              <td class=""><img src="" alt=""></td>
-            </tr> -->
+            </tr>
+            <tr>
+              <td class="left"><img src="images/food.jpg" alt="Muffins"></td>
+              <td><img src="images/feed.jpg" alt="Feeding cat"></td>
+            </tr>
           </table>
+          <h3>Our Requests</h3>
+          <div class="requests">
+          <div class="rules">
+            <img src="images/camera.png" alt="Don't take flash photography" />
+            <h4>Please do not use flash light when taking photos</h4>
+          </div>
+          <div class="rules">
+            <img src="images/touch.png" alt="Don't touch cats forcefully" />
+            <h4>Please do not touch or pick up cats forcefully</h4>
+          </div>
+          <div class="rules">
+            <img src="images/no_food.png" alt="Don't feed" />
+            <h4>Please do not feed human food to the cats</h4>
+          </div>
+        </div>
         </div>
         <footer>
           <a href="index.html"><img src="images/catfeLogo.png" alt="Catfé Logo" id="logo"/>
