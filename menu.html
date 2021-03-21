@@ -23,6 +23,7 @@
             
             #top {
               text-transform: uppercase;
+              font-weight: normal;
               letter-spacing: 10px;
               font-size: 100px;
               color: #fff;
@@ -50,6 +51,17 @@
               position: relative;
               bottom: 90px;
             }
+<<<<<<< HEAD
+=======
+            
+            h2.subtitle{
+              letter-spacing: 3px;
+              text-transform: uppercase;
+              font-size: 20px;
+              font-weight: 600;
+            }
+            
+>>>>>>> de1b19ad755a5643c4456917d89d7f8dd7a68714
             h3 {
                 text-align: center;
                 letter-spacing: 3px;
@@ -58,6 +70,7 @@
                 font-weight: 100;
                 font-size: 13px;
             }
+<<<<<<< HEAD
 
             .card1{
                 position: relative;
@@ -83,12 +96,22 @@
                 position: relative;
                 margin: -570px 0px 150px 1250px;
                 max-width: 320px;
+=======
+            .card1, .card2, .card3, .card4, .card5, .card6 {
+                position: relative;
+                margin: auto;
+                margin-bottom: 5%;
+                margin-top: -2%;
+                /* margin: 50px 50px 150px 450px; */
+                width: 600px;
+>>>>>>> de1b19ad755a5643c4456917d89d7f8dd7a68714
                 height: 420px;
                 background-color: rgb(250, 221, 186);
                 border-radius: 20px;
                 overflow: hidden;
             }
-            .card1::before{
+
+            .card1::before, .card2::before, .card3::before, .card4::before, .card5::before, .card6::before {
                 content: '';
                 position: absolute;
                 top: -50%;
@@ -98,6 +121,7 @@
                 transform: skewY(345deg);
                 transition: 0.5s;
             }
+<<<<<<< HEAD
 
             .card1:hover::before{
                 top: -70%;
@@ -105,6 +129,13 @@
             }
 
             .card1::after{
+=======
+            .card1:hover::before, .card2:hover::before, .card3:hover::before, .card4:hover::before, .card5:hover::before, .card6:hover::before{
+                top: -70%;
+                transform: skewY(390deg);
+            }
+            .card1::after, .card2::after, .card3::after, .card4::after, .card5::after, .card6::after{
+>>>>>>> de1b19ad755a5643c4456917d89d7f8dd7a68714
                 content: '';
                 position: absolute;
                 bottom: 0;
@@ -113,11 +144,26 @@
                 font-size: 8em;
                 color: black;
             }
+<<<<<<< HEAD
 
+=======
+            .card1 .contentBox h4, .card2 .contentBox h4, .card3 .contentBox h4, .card4 .contentBox h4, .card5 .contentBox h4, .card6 .contentBox h4 {
+                text-align: center;
+                letter-spacing: 3px;
+                width: 100%;
+                margin-top: -50px;
+                font-weight: 100;
+                font-size: 20px;
+            }
+            
+            /* Card 1 */
+>>>>>>> de1b19ad755a5643c4456917d89d7f8dd7a68714
             .card1 .imgBox{
                 position: relative;
-                width: 100%;
+                width: 60%;
                 display: flex;
+                left: 50%;
+                transform: translateX(-50%);
                 justify-content: center;
                 align-items: center;
                 padding-top: 20px;
@@ -144,15 +190,8 @@
                 flex-direction: column;
                 z-index: 1;
             }
-            .card1 .contentBox h4 {
-                text-align: center;
-                letter-spacing: 3px;
-                width: 100%;
-                margin-top: -50px;
-                font-weight: 100;
-                font-size: 20px;
-            }
 
+<<<<<<< HEAD
             /* Card2 */
             .card2::before{
                 content: '';
@@ -180,14 +219,20 @@
                 color: black;
             }
 
+=======
+            /* Card2 */        
+>>>>>>> de1b19ad755a5643c4456917d89d7f8dd7a68714
             .card2 .imgBox2{
                 position: relative;
-                width: 100%;
+                width: 50%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                padding-top: 75px;
+                padding-top: 120px;
+                padding-bottom: 20px;
                 z-index: 1;
+                left: 52%;
+                transform: translateX(-50%);
             }
 
             .card2 .imgBox2 img{
@@ -210,6 +255,7 @@
                 flex-direction: column;
                 z-index: 1;
             }
+<<<<<<< HEAD
 
             .card2 .contentBox h4 {
                 text-align: center;
@@ -247,14 +293,19 @@
                 color: black;
             }
 
+=======
+            /* Card3 */
+>>>>>>> de1b19ad755a5643c4456917d89d7f8dd7a68714
             .card3 .imgBox{
                 position: relative;
-                width: 100%;
+                width: 70%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 padding-top: 20px;
                 z-index: 1;
+                left: 52%;
+                transform: translateX(-50%);
             }
 
             .card3 .imgBox img{
@@ -270,13 +321,15 @@
 
             .card3 .contentBox{
                 position: relative;
-                padding: 20px;
+                padding: 0px 20px;
+                bottom: 80px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
                 z-index: 1;
             }
+<<<<<<< HEAD
 
             .card3 .contentBox h4 {
                 text-align: center;
@@ -287,33 +340,117 @@
                 font-size: 20px;
             }
 
+=======
+            
+            /* Card 4 */
+            .card4 .imgBox{
+                position: relative;
+                width: 80%;
+                display: flex;
+                left: 50%;
+                transform: translateX(-50%);
+                justify-content: center;
+                align-items: center;
+                padding-top: 80px;
+                z-index: 1;
+            }
+            .card4 .imgBox img{
+                max-width: 100%;
+                max-height: 80%;
+                transition: 0.5s;
+            }
+            .card4:hover .imgBox img{
+                transform: rotate(20deg);
+                max-width: 70%;
+            }
+            .card4 .contentBox{
+                position: relative;
+                padding: 0px 20px;
+                bottom: 230px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                z-index: 1;
+            }
+            
+            /* Card 5 */
+            .card5 .imgBox2{
+                position: relative;
+                width: 70%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 90px;
+                z-index: 1;
+                left: 52%;
+                transform: translateX(-50%);
+            }
+            .card5 .imgBox2 img{
+                max-width: 95%;
+                max-height: 60%;
+                transition: 0.5s;
+            }
+            .card5:hover .imgBox2 img{
+                transform: rotate(20deg);
+                max-width: 70%;
+            }
+            .card5 .contentBox{
+                position: relative;
+                padding: 0px 20px;
+                bottom: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                z-index: 1;
+            }
+            
+            /* Card 6 */
+            .card6 .imgBox{
+                position: relative;
+                width: 75%;
+                display: flex;
+                left: 50%;
+                transform: translateX(-50%);
+                justify-content: center;
+                align-items: center;
+                padding-top: 40px;
+                z-index: 1;
+            }
+            .card6 .imgBox img{
+                max-width: 100%;
+                max-height: 80%;
+                transition: 0.5s;
+            }
+            .card6:hover .imgBox img{
+                transform: rotate(20deg);
+                max-width: 70%;
+            }
+            .card6 .contentBox{
+                position: relative;
+                padding: 0px 20px;
+                bottom: 160px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                z-index: 1;
+            }
+            
+            
+>>>>>>> de1b19ad755a5643c4456917d89d7f8dd7a68714
             @media screen and (max-width: 900px) {
-                .card1{
+                .card1, .card2, .card3, .card4, .card5, .card6 {
                     position: relative;
-                    width: 320px;
+                    width: 600px;
                     height: 420px;
                     background-color: rgb(250, 221, 186);
                     border-radius: 20px;
+                    margin: auto;
+                    margin-bottom: 5%;
                     overflow: hidden;
-                    margin: 10% 30% 20%;
-                }
-                .card2{
-                    position: relative;
-                    width: 320px;
-                    height: 420px;
-                    background-color: rgb(250, 221, 186);
-                    border-radius: 20px;
-                    overflow: hidden;
-                    margin: 10% 30% 20%;
-                }
-                .card3{
-                    position: relative;
-                    width: 320px;
-                    height: 420px;
-                    background-color: rgb(250, 221, 186);
-                    border-radius: 20px;
-                    overflow: hidden;
-                    margin: 10% 30% 20%;
+                    display: flex;
                 }
             }
         </style>
@@ -332,10 +469,9 @@
     </head>
     <body>
         <nav>
-            <div class="logo">    
-                <img src="images/catfeLogo.png" alt="logo" />    
-                <h4 >Catfé</h4>
-            </div>
+          <div class="logo">    
+            <a href="index.html"><img src="images/full_logo.jpg" alt="logo"></a>   
+          </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -355,24 +491,24 @@
         </nav>
         <script src="nav.js"></script>
         <div class="main">
-            <div id="top">Menu</div>
+            <h1 id="top">Menu</h1>
             <h2>Catfé is home to many fresh products! <br>Made of 100% Certified Organic and Fair Trade</h2>
             <!-- Café Options -->
-            <h2><strong>Catfé Food</strong></h2>
+            <h2 class="subtitle">Catfé Drinks</h2>
             <div class="card1">
                 <div class="imgBox">
                     <img src="images/cat-latte.png">
                 </div>
                 <div class="contentBox">
-                    <h4 style="margin-top: -5%;">Signature Catfé Latte <br><br><br>Made with fresh beans from Columbia</h4>
+                    <h4 style="margin-top: -5%;">Signature Catfé Latte <br><br><br>Made with roasted Columbian beans</h4>
                 </div>
-            </div>
+            </div> 
             <div class="card2">
                 <div class="imgBox2" style="margin-top: -80px;">
                     <img src="images/chai-latte.png">
                 </div>
                 <div class="contentBox">
-                    <h4 style="margin-top: -12%;"> Chai Latte<br><br><br>Nice and cozy</h4>
+                    <h4 style="margin-top: -12%;"> Chai Latte<br><br><br>Spiced perfectly for winter days</h4>
                 </div>
             </div>
             <div class="card3">
@@ -380,34 +516,36 @@
                     <img src="images/hot-tea.png">
                 </div>
                 <div class="contentBox">
-                    <h4 style="margin-top: 18%;"> Hot Tea<br><br><br>Simple Hot Tea</h4>
+                    <h4 style="margin-top: 18%;"> Hot Tea<br><br><br>We offer green teas, red teas and black teas</h4>
                 </div>
             </div>
 
+
             <!-- Snacks Products -->
-            <h2><strong>Catfé Drinks</strong></h2>
-            <div class="card1">
+            <br>
+            <h2 class="subtitle">Catfé Food</h2>
+            <div class="card4">
                 <div class="imgBox">
                     <img src="images/muffins.png">
                 </div>
                 <div class="contentBox">
-                    <h4 style="margin-top: 35%;">Muffins<br><br><br>Variety of Muffins</h4>
+                    <h4 style="margin-top: 35%;">Muffins<br><br><br>Blueberry, poppyseed, lemon and chocolate</h4>
                 </div>
             </div>
-            <div class="card2">
+            <div class="card5">
                 <div class="imgBox2">
                     <img src="images/matcha-cake.png">
                 </div>
                 <div class="contentBox">
-                    <h4 style="margin-top: 0%;"> Matcha Cake<br><br><br>Made with premium matcha</h4>
+                    <h4 style="margin-top: 0%;"> Matcha Cake<br><br><br>Made with premium matcha from scratch</h4>
                 </div>
             </div>
-            <div class="card3">
+            <div class="card6">
                 <div class="imgBox">
                     <img src="images/dango.png">
                 </div>
                 <div class="contentBox">
-                    <h4 style="margin-top: 32%;"> Catfé Dango <br><br><br>Purrfectly Sweet.</h4>
+                    <h4 style="margin-top: 32%;"> Catfé Dango <br><br><br>The purrfect three flavored treat</h4>
                 </div>
             </div>
 
@@ -415,7 +553,7 @@
         </div>
         <footer>
           <a href="index.html"><img src="images/catfeLogo.png" alt="Catfé Logo" id="logo"/>
-          <div class="logo">Catfé</div></a>
+          <div class="name">Catfé</div></a>
           <br>&copy; 2021 Catfé All Rights Reserved We Hope
         <footer>
     </body>

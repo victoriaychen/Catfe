@@ -13,14 +13,100 @@
       
         <title>Catfé - Contact</title>
         <link href="stylesheet.css" type="text/css" rel="stylesheet" />
+        <style> 
 
+
+            h1 {
+                padding-top: 40px;
+                text-align: center;
+                font-family: 'Playfair Display', serif;
+                padding-bottom: 20px;
+                
+            }
+
+            h2 { 
+                text-align: center;
+                padding-bottom: 20px;
+
+             }
+
+            p {
+                padding-top: 10px;
+                padding-left: 30px;
+            }
+
+            h3 {
+                letter-spacing: 1px;
+                text-align: center;
+                font-weight: normal;
+
+            } 
+            h4 {
+                letter-spacing: 1px;
+                text-align: center;
+                font-weight: normal;
+
+            }   
+           
+            .block {
+                display: inline-block;
+                text-align: center;
+                padding-right: 15px;
+                padding-left: 15px;
+            }
+
+            .block2 {
+                text-align: center;
+                padding-top: 5px;
+            }
+
+            .content {
+                text-align: center;
+                padding-bottom: 100px;
+
+            }
+
+            .form {
+                display: flex;
+                justify-content: center;
+                margin-top: 60px;
+                margin-bottom: 60px;
+                background-color: #FAF3EB;
+                margin: 50px auto 70px auto;
+                width: 60%;
+                padding-top: 30px;
+                padding-bottom: 30px;
+                border-radius: 2em;
+                border: 5px solid #fff; 
+                box-shadow: 0 0 0 2pt #FAF3EB;
+                font-family: 'Playfair Display', serif;
+
+            }
+
+            .events {
+                padding-left: 60px;
+                line-height: 25px;
+            }
+
+            .submit {
+                text-align: center;
+
+            }
+
+            .button{font-family: 'Playfair Display', serif; color: #B5926D; background-color: #FAF3EB; 
+            font-size: 15px; padding: 5px; border-radius: 6px; border: 1px solid#B5926D; 
+            width: 160px; text-align: center; float: center;}
+
+            .button:hover{color:#fff; background-color:#C8AB8D; border: 1px;}
+
+
+        </style>
     </head>
     <body>
         <nav>
-            <div class="logo">    
-                <img src="images/catfeLogo.png" alt="logo" />    
-                <h4 >Catfé</h4>
-            </div>
+          <div class="logo">    
+            <a href="index.html"><img src="images/full_logo.jpg" alt="logo"></a>   
+          </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -38,25 +124,124 @@
             </div>
 
         </nav>
+    <div class = "form">
+        <form name = "reserve">
+            <h2> Make a reservation </h2>
+            <p>Name: <input type="TEXT" name = "name" size="20" maxlength="99" /></p>
+            <p>Email: <input type="TEXT" name = "email" size="30" maxlength="99" /></p>
+            <p>Phone number: <input type="TEXT" name = "phone"size="20" maxlength="99" /></p>
+            <p>Size of party: 
+            <select name = "size">
+                <option value = "1">1</option>
+                <option value = "2">2</option>
+                <option value = "3">3</option>
+                <option value = "4">4</option>
+            </select></p>
+            <p> Choose an event: </p>
+            <div class = "events">
+                <input type="radio" name="event">  Cookie Fiesta <br/>
+                <input type="radio" name="event">  Catfé Brewing <br/>
+                <input type="radio" name="event">  Cat Backing <br/>
+                <input type="radio" name="event">  Movie Night <br/>
+                <input type="radio" name="event">  Gaming Club <br/>
+                <input type="radio" name="event">  Latté Cat Art <br/>
+                <input type="radio" name="event">  Cat-o-ween <br/>
+                <input type="radio" name="event">  Kittens Greet & Meet <br/>
+                <input type="radio" name="event" onclick = "showDate()">  General Visit <br/>
+            </div>
+            <p>Day (MM/DD/YYYY): <input type="TEXT" name = "day" size="15" maxlength="99" /></p>
 
-        <form>
-            <h1>RESERVATION FORM</h1>
-            <p>NAME<input type="TEXT" size="20" maxlength="99" /></p>
-            <p>AGE<input type="TEXT" size="12" maxlength="99" /></p>
-            <p>ADDRESS<input type="TEXT" size="42" maxlength="99" /></p>
-            <p>EMAIL<input type="TEXT" size="30" maxlength="99" /></p>
-            <p>TELEPHONE<input type="TEXT" size="10" maxlength="99" /></p>
+
             <br/>
-            <input type="submit" value="click here to submit" />
-            <input type="reset" value="clear this form" />
+            <div class = "submit">
+                <input type="submit" class = "button" value="Submit" onclick = "validateForm()"/>
+                <input type="reset" class = "button" value="Clear Form" />
+
+                <h4 id = "thank"></h4>
+            </div>
         </form>
+    </div>
+
         <script src="nav.js"></script>
+
+        <script language = "javascript">
+            //If user was directed from events page then will check radio button automatically
+            window.onload = function() {
+              if (0 <= localStorage.getItem("eventChosen") && 7 >= localStorage.getItem("eventChosen")) {
+                var i = localStorage.getItem("eventChosen")
+                document.getElementsByName("event")[i].checked = true;
+                localStorage.setItem("eventChosen",10);
+              }
+            };
+        
+            function validateForm() {
+                // use javascript array for events list 
+                var name = document.forms["reserve"]["name"].value;
+                var phone = document.forms["reserve"]["phone"].value;
+                var email = document.forms["reserve"]["email"].value;
+                var day = document.forms["reserve"]["day"].value;
+
+                // if didn't enter last name, alert
+                if (name == "") {
+                    alert("Please enter your name.");
+                    return false;                  
+                }
+
+                if (email == "") {
+                    alert("Please enter your email address.");
+                    return false;
+                }
+            
+                if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(reserve.email.value))
+                {
+                    return true;
+                }
+                    alert("You have entered an invalid email address!")
+                    return false;
+
+                // if the phone number is not valid, display an alert
+                var phoneNumber = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
+                if (phone == "" || !phone.match(phoneNumber)){
+                alert("Please enter a valid phone number in the form of XXX XXX XXXX");
+                return false;
+                }
+
+                displayMessage();
+                return true;
+
+            }
+
+            function displayMessage() {
+                var message = "Thank you for making a reservation! We look forward to seeing you soon.";
+                document.getElementById("thank").innerHTML = message;
+
+            }
+
+            function showDate() {
+
+            }
+
+
+
+        </script>
+        <div class = "content">
+            <h1>CONTACT US</h1>
+            <div class = "block">
+                <h3> (510) 501-2274 </h3>
+            </div>
+            <div class = "block">
+                <h3> info@catfé.com </h3>
+            </div>
+            <div class = "block2">
+                <h3> Located in the Cummings Center </h3>
+            </div>
+        </div>
         
         <!-- add code here -->
         
         <footer>
           <a href="index.html"><img src="images/catfeLogo.png" alt="Catfé Logo" id="logo"/>
-          <div class="logo">Catfé</div></a>
+          <div class="name">Catfé</div></a>
           <br>&copy; 2021 Catfé All Rights Reserved We Hope
         <footer>
     </body>

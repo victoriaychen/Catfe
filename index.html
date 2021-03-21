@@ -6,14 +6,31 @@
         <meta name = "author" content="Victoria Y. Chen, Willy (Wo Wei) Lin, Yiyi Wang, Sara Siqueira">
         <meta name = "viewport" content="width=device-width, initial-scale =1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
+
       
         <title>Catfé - Home</title>
         <link href="stylesheet.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript">
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            document.getElementById("slideshow").style.height = "200px";
+          } else {
+            document.getElementById("slideshow").style.height = "600px";
+          }
+        }
+
+        </script>
         <style>
+            
+            @import url(https://fonts.googleapis.com/css?family=Fredoka+One);
             h1{
                 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
                 font-size: 90px;
@@ -21,38 +38,176 @@
                 margin-left: 50%;
                 text-shadow: 0 0 5px black;
             }
-            .block1 {
+            
+            h3 {
+              text-transform: uppercase;
+              font-size: 22px;
+              font-weight: 300;
+              text-align: center;
+              letter-spacing: 3px;
+            }
+            
+            #subtitle {
+              text-align: center;
+              letter-spacing: 3px;
+              width: 100%;
+              font-weight: 100;
+              font-size: 17px;
+              background-color: #fff;
+              border-top-left-radius: 5em;
+              border-top-right-radius: 5em;
+              position: relative;
+              bottom: 80px;
+              padding-top: 70px;
+              padding-bottom: 20px;
+            }
+            
+            #subtitle h3 {
+              text-transform: uppercase;
+              font-size: 30px;
+              font-weight: 300;
+              padding-bottom: 30px;
+            }
+            
+            #subtitle h4 {          
+              font-weight: 300;
+            }
+            
+            .photos {
+              position: relative;
+              bottom: 20px;
+              display: flex;
+              justify-content: center;
+              padding-bottom: 70px;
+            }
+            
+            .photos img {
+              width: 20%;
+              margin: 0 1%;
+            }
+            
+            
+            /* .block1 {
                 display: inline-block;
                 color:#000000;
                 font-weight: bold;
                 font-size: 40px;
-                max-width: 800px;
-                max-height: 800px;
                 height: auto; 
                 width: auto; 
                 margin-left: 50%;   
                 z-index: 2;
-            }
+            } */
 
-            .main {
-                background-image: url(images/cat-4611189_1920.jpg);
+            /* .main {
+                background-color: rgb(255, 255, 255);
                 background-position: center;
                 background-size: cover;
                 width: 100%;
                 height: 40vh;
                 padding-top: 5%;
+            } */
+            #slideshow { 
+                position: relative; 
+                overflow: hidden;
+                background-size: cover;
+                width: 100%; 
+                height: 600px; 
+                z-index: -200;
+                transition: 0.7s;
+            }
+            #slideshow img{
+                width: 100%; 
+                margin-top: -10%;
+                transform: translateY(10%);
             }
 
+            #slideshow > div { 
+                position: absolute; 
+            }
+            .wave{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                text-align: center;
+                transform: translate(-50%, -50%);
+            }
+            label{
+                font-size: 50px;
+                font-weight: 500;
+                color: rgb(255, 255, 255);
+                cursor: pointer;
+            }
+            label span{
+                display: inline-block;
+                object-fit: cover;
+                font-size: 100px;
+                font-weight: 500;
+                transition: 0.3s cubic-bezier(0.68,-0.55,0.265,1.55);
+            }
+            label:hover span{
+                color: #eeb867;
+                transform: translateY(-30px);
+            }
+            
+            .menu {
+              width: 60%;
+              /* display: flex;
+              justify-content: center; */
+              display: block;
+              margin: 50px auto 80px auto;
+              background-color: #FAF3EB;
+              padding: 20px 5% 20px 6%;
+              border: 5px solid #fff; 
+              box-shadow: 0 0 0 2pt #FAF3EB;
+            }
+            
+            .block {
+              display: inline-block;
+              width: 44%;
+              margin: 5px 2% 40px 2%;;
+            }
+            
+            .menu h4 {
+              text-align: center;
+              text-transform: uppercase;
+              letter-spacing: 3px;
+              font-weight: 100;
+              font-size: 18px;
+            }
+            
+            .menu h5 {
+              letter-spacing: 1px;
+              font-weight: 100;
+            }
+            
+            .block img{
+              margin-top: 20px;
+              width: 100%;
+              overflow: hidden;
+              object-fit: cover;
+              height: 300px;
+              margin-bottom: 10px;
+            }
+            .map{
+              text-align: center;
+            }
+            .map h3{
+              text-transform: uppercase;
+              font-size: 17px;
+              font-weight: 500;
+              text-align: center;
+              letter-spacing: 1px;
+            }
         </style>
 
     </head>
     <body>
         <!-- Navigation Bar -->
         <nav>
-            <div class="logo">    
-                <img src="images/catfeLogo.png" alt="logo" />    
-                <h4 >Catfé</h4>
-            </div>  
+          <div class="logo">    
+            <a href="index.html"><img src="images/full_logo.jpg" alt="logo"></a>   
+          </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -73,15 +228,95 @@
         <script src="nav.js"></script>
         
         <!-- Main Body -->
-        <div class="main">
-            <h1>Purrfection in A Cup</h1>  
-            <div class="block1"><p>Tufts University's First Cat Café</p></div>
-        </div>               
+        <div id="slideshow">
+            <div>
+              <img src="images/home1.JPG">
+            </div>
+            <div>
+              <img src="images/home2.JPG">
+            </div>
+            <div>
+              <img src="images/home3.JPG">
+            </div>
+            <div>
+                <img src="images/home4.JPG">
+            </div>
+            <div>
+                <img src="images/home5.JPG">
+            </div>
+            <div>
+                <img src="images/home6.JPG">
+            </div>
+         </div>
+         <div class="main">
+            <div class="wave">
+                <label>Catfé</label>
+            </div>  
+         </div>
+        <div id="subtitle">
+          <h3>Our Mission</h3>
+          <h4>To bring Jumbos joy through the company of our adorable cats, coupled <br>with exceptional food and beverages served in a cozy environment</h4>
+        </div>
+        <div class="photos">
+        <img src="images/slide1.jpg" alt="Sitting corner">
+        <img src="images/slide2.jpg" alt="Cat staring">
+        <img src="images/slide3.jpg" alt="Cat walking on platforms">
+        </div>
+        <h3>Seasonal menu additions</h3>
+        <div class="menu">
+          <div class="block">
+            <h4>Strawberry Cake</h4>
+            <img src="images/cake.jpg" alt="Strawberry cake">
+            <h5>It's strawberry seasonal and we're not letting you miss out! Enjoy this limited strawberry sponge cake this spring</h5>
+          </div>
+          <div class="block">
+            <h4>Honey shortbread</h4>
+            <img src="images/shortbread.jpg" alt="Shortbread cookies">
+            <h5>Nothing quite says spring like the sweetness of honey! We're warning you, you will be addicted once you try them</h5>
+          </div>
+          <h5>&#9758;&nbsp;To see our full menu please refer to our <a href="menu.html">menu page</a></h5>
+        </div>
+        <h3>Covid Updates to Catfé Rules</h3>
+
+        <br>
+        <!-- Map -->
+        <h3>Location</h3>
+        <div class="map">
+          <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1056.6940836891065!2d-71.11656382818244!3d42.40787868141289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDLCsDI0JzI4LjUiTiA3McKwMDcnMDAuMCJX!5e0!3m2!1sen!2sus!4v1616281115161!5m2!1sen!2sus"
+                       width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe></p>
+          <br>
+          <h3><strong>Located at Cummings Center at Tufts University</strong></h3>
+        </div>
+        <!-- Footer -->
         <footer>
           <a href="index.html"><img src="images/catfeLogo.png" alt="Catfé Logo" id="logo"/>
-          <div class="logo">Catfé</div></a>
+          <div class="name">Catfé</div></a>
           <br>&copy; 2021 Catfé All Rights Reserved We Hope
         <footer>
-
+        
+        <script>
+            $("#slideshow > div:gt(0)").hide();
+            setInterval(function() {
+            $('#slideshow > div:first')
+                .fadeOut(1000)
+                .next()
+                .fadeIn(1000)
+                .end()
+                .appendTo('#slideshow');
+            }, 3000);
+            //Animation Welcome
+            const text = document.querySelectorAll('label');
+            text.forEach(label =>{
+            label.innerHTML = label.textContent.split('').map((text, wave) =>
+                `<span style="transition-delay: ${wave * 50}ms">${text}</span>`).join('');
+            });
+            $(window).scroll(function(){
+              if($(this).scrollTop() > 0){
+                $('.wave').fadeOut();
+              }else{
+                $('.wave').fadeIn();
+              }
+            });
+        </script>
       </body>
 </html>
