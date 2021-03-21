@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="This is a website for assignment 2 for CS20">
@@ -240,12 +241,12 @@
             // ensure at least one time slot is selected (Not sure how to do this)
             if (document.getElementsByClassName("event_option")[0].selected) {
                 $("time_slot_selection").addClass("addRequired");
-                       document.getElementById("timeError").innerHTML = "   Please choose an event.";
-                       return false;
+                document.getElementById("timeError").innerHTML = "   Please choose an event.";
+                return false;
             }
-            
+
             // display the confirmation of their reservation
-            if (name && email && phone && day && verifyEmail && vaildPhone && vaildEvent){
+            if (name && email && phone && day && verifyEmail && vaildPhone && vaildEvent) {
                 alert("Thank you for making a reservation! We look forward to seeing you soon.");
             }
 
@@ -290,8 +291,8 @@
         function verifyEvent() {
             if (document.getElementsByClassName("event_option")[0].selected) {
                 $("selectEvents").addClass("addRequired");
-                       document.getElementById("eventError").innerHTML = "   Please choose an event.";
-                       return false;
+                document.getElementById("eventError").innerHTML = "   Please choose an event.";
+                return false;
             }
             return true;
         }
