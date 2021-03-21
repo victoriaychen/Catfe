@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="This is a website for assignment 2 for CS20">
@@ -8,14 +9,12 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
     <title>Catfé - Contact</title>
     <link href="stylesheet.css" type="text/css" rel="stylesheet" />
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $(function() {
             $("#datepicker").datepicker();
@@ -127,10 +126,6 @@
         .slots {
             padding-right: 30px;
             line-height: 30px;
-        }
-
-        .ui-datepicker .ui-widget-content {
-            color-background: #ffffff;
         }
     </style>
 </head>
@@ -345,14 +340,16 @@
             selectEvents(newEvents);
             isDefault();
         }
+
     </script>
 
+    <footer>
+        <a href="index.html"><img src="images/catfeLogo.png" alt="Catfé Logo" id="logo" />
+            <div class="name">Catfé</div>
+        </a>
+        <br>&copy; 2021 Catfé All Rights Reserved We Hope
         <footer>
-          <a href="index.html"><img src="images/catfeLogo.png" alt="Catfé Logo" id="logo"/>
-          <div class="name">Catfé</div></a>
-          <br>&copy; 2021 Catfé All Rights Reserved We Hope
-        <footer>
-    </body>
+</body>
 
 
 </html>
