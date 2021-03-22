@@ -172,8 +172,7 @@
                 <select id="selectEvents" onchange="showTimeSlots();"> </select><span id="eventError"></span>
             </p>
             <div id="time_slot_selection" style="display: block; text-align: center;">
-                <span id="timeError">
-                </span>
+                <span id="timeError"></span>
             </div>
 
             <p>Day (MM/DD/YYYY)*: <input type="TEXT" name="day" size="15" maxlength="99" id="datepicker" /><span id="dayError"></span></p>
@@ -231,8 +230,6 @@
         }
 
         function validateForm() {
-            alert("Validating!");
-            console.log("Validating..");
             var name = required("name");
             var email = required("email");
             var phone = required("phone");
@@ -240,38 +237,28 @@
             var validEmail = verifyEmail("email");
             var vaildPhone = verifyNumber("phone");
             var vaildEvent = verifyEvent();
+            var chosen = verifySlots();
 
             // ensure at least one time slot is selected 
-            var slot_arr = document.getElementsByName("slot"); 
-            var chosen = false;
-            for (var i = 0; i < slot_arr.length; i++) {
-                if (slot_arr[i].checked) {
-                    alert("found check");
-                    chosen = true;
-                    alert(chosen);
-                }
-            }
-            if (chosen == false ) {
-                alert("Chosen is false!");
-                console.log("Chosen is false")
-                $("#time_slot_selection").addClass("addRequired");
-                alert(document.getElementById("timeError"));
-                console.log(document.getElementById("timeError"));
-                //document.getElementById("timeError").innerHTML = "Required";
-                console.log("failed");
-                alert("Failed");
-            }
-            alert("Chosen: " + chosen);
-            console.log("out of conditional"); 
 
-            chosen = true;
             // display the confirmation of their reservation
             if (name && email && phone && day && verifyEmail && vaildPhone && vaildEvent && chosen) {
-                alert("HERE");
+                alert("in confirmation");
                 // extract the name of the user and the date chosen from the form 
                 var name_str = document.forms["reserve"]["name"].value;
                 var date_str = document.getElementById('datepicker').value;
-            
+                var time_slot = document.getElementsByName("slot");
+                
+                var selected_index = -1;
+                for (var i = 0; i < time_slot.length; i++) {
+                    if (time_slot[i].checked) {
+                        checked_index = time_slot[i].id;
+                    }
+                }
+                start_time_str = checked_index + ":00";
+
+                alert("got variables");
+                alert(time_slot);
                 var event_index = getEventIndex();
                 event_str = newEvents[event_index - 1].name;
                 var html_str = "";
@@ -285,10 +272,10 @@
 
                 // if the user selects an event, display message as normal, if select general visit, alter grammar
                 if (event_index != 9) {
-                    html_str = "<div " + div_style + "> <p " + styling_str + "> Hi, " + name_str + ". </p> <p style = 'text-align: center;'> Thanks for making a reservation at the Catfé! We look forward to seeing you on " + date_str + " for " + event_str + ". </p></div>";
+                    html_str = "<div " + div_style + "> <p " + styling_str + "> Hi, " + name_str + ". </p> <p style = 'text-align: center;'> Thanks for making a reservation at the Catfé! We look forward to seeing you on " + date_str + " at " + start_time_str + " for " + event_str + ". </p></div>";
 
                 } else {
-                    html_str = "<p " + styling_str + "> Hi, " + name_str + ". </p> <p style = 'text-align: center;'> Thanks for making a reservation at the Catfé! We look forward to seeing you on " + date_str + " for a " + event_str + ". </p>";
+                    html_str = "<p " + styling_str + "> Hi, " + name_str + ". </p> <p style = 'text-align: center;'> Thanks for making a reservation at the Catfé! We look forward to seeing you on " + date_str + " at " + start_time_str + " for a " + event_str + ". </p>";
 
                 }
         
@@ -300,7 +287,6 @@
             }
 
             // open 
-            alert("RETURNING " + name && email && phone && day && verifyEmail && vaildPhone && vaildEvent && chosen);
             return (name && email && phone && day && verifyEmail && vaildPhone && vaildEvent && chosen);
         }
 
@@ -348,6 +334,23 @@
             return true;
         }
 
+        function verifySlots() {
+            var slot_arr = document.getElementsByName("slot"); 
+            var chosen = false;
+            for (var i = 0; i < slot_arr.length; i++) {
+                if (slot_arr[i].checked) {
+                    chosen = true;
+                }
+            }
+            if (chosen == false ) {
+                $("#time_slot_selection").addClass("addRequired");
+                document.getElementById("timeError").innerHTML = "Required";
+            }
+            return chosen;
+
+        }
+
+
         //display radio buttons for timeslots specific to event selected
         function showTimeSlots() {
             // find which one is selected
@@ -374,7 +377,7 @@
 
             // <input type="radio" id="put UID here">00:00
             // make time slots
-            new_html = "";
+            new_html = "<span id='timeError'></span>";
             for (var i = start_time; i < end_time; i++) {
                 new_html += "<div class='slots'><input type='radio' id=" + i + " name='slot'>" + day + "  " + i + ":00 -- " + (i + 1) + ":00</div>";
             }
