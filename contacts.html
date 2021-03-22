@@ -1,250 +1,435 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name = "description" content="This is a website for assignment 2 for CS20">
-        <meta name = "author" content="Victoria Y. Chen, Willy (Wo Wei) Lin, Yiyi Wang, Sara Siqueira">
-        <meta name = "viewport" content="width=device-width, initial-scale =1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="This is a website for assignment 2 for CS20">
+    <meta name="author" content="Victoria Y. Chen, Willy (Wo Wei) Lin, Yiyi Wang, Sara Siqueira">
+    <meta name="viewport" content="width=device-width, initial-scale =1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-      
-        <title>Catfé - Contact</title>
-        <link href="stylesheet.css" type="text/css" rel="stylesheet" />
-        <style> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
+    <!-- jQuery and jQeury UI -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-            h1 {
-                padding-top: 40px;
-                text-align: center;
-                font-family: 'Playfair Display', serif;
-                padding-bottom: 20px;
-                
-            }
+    <title>Catfé - Contact</title>
+    <link href="stylesheet.css" type="text/css" rel="stylesheet" />
+    <script>
+        $(function() {
+            $("#datepicker").datepicker();
+        });
+    </script>
+    <style>
+        h1 {
+            padding-top: 40px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            padding-bottom: 20px;
 
-            h2 { 
-                text-align: center;
-                padding-bottom: 20px;
+        }
 
-             }
+        h2 {
+            text-align: center;
+            padding-bottom: 9px;
+            letter-spacing: 1px;
+            text-align: center;
+            font-weight: 100;
+            font-size:20px;
 
-            p {
-                padding-top: 10px;
-                padding-left: 30px;
-            }
+        }
 
-            h3 {
-                letter-spacing: 1px;
-                text-align: center;
-                font-weight: normal;
+        p {
+            padding-top: 10px;
+            padding-left: 30px;
+        }
 
-            } 
-            h4 {
-                letter-spacing: 1px;
-                text-align: center;
-                font-weight: normal;
+        .block {
+            display: inline-block;
+            text-align: center;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
 
-            }   
-           
-            .block {
-                display: inline-block;
-                text-align: center;
-                padding-right: 15px;
-                padding-left: 15px;
-            }
+        .block2 {
+            text-align: center;
+            padding-top: 5px;
+        }
 
-            .block2 {
-                text-align: center;
-                padding-top: 5px;
-            }
+        .content {
+            text-align: center;
+            padding-bottom: 80px;
 
-            .content {
-                text-align: center;
-                padding-bottom: 100px;
+        }
 
-            }
+        .form {
+            display: flex;
+            justify-content: center;
+            margin-top: 60px;
+            margin-bottom: 60px;
+            background-color: #FAF3EB;
+            margin: 50px auto 40px auto;
+            width: 60%;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            border-radius: 2em;
+            border: 5px solid #fff;
+            box-shadow: 0 0 0 2pt #FAF3EB;
+            font-family: 'Playfair Display', serif;
 
-            .form {
-                display: flex;
-                justify-content: center;
-                margin-top: 60px;
-                margin-bottom: 60px;
-                background-color: #FAF3EB;
-                margin: 50px auto 70px auto;
-                width: 60%;
-                padding-top: 30px;
-                padding-bottom: 30px;
-                border-radius: 2em;
-                border: 5px solid #fff; 
-                box-shadow: 0 0 0 2pt #FAF3EB;
-                font-family: 'Playfair Display', serif;
+        }
 
-            }
+        .events {
+            padding-left: 60px;
+            line-height: 25px;
+        }
 
-            .events {
-                padding-left: 60px;
-                line-height: 25px;
-            }
+        .submit {
+            text-align: center;
 
-            .submit {
-                text-align: center;
+        }
 
-            }
+        .button {
+            font-family: 'Playfair Display', serif;
+            color: #B5926D;
+            background-color: #FAF3EB;
+            font-size: 15px;
+            padding: 5px;
+            border-radius: 6px;
+            border: 1px solid#B5926D;
+            width: 160px;
+            text-align: center;
+            float: center;
+        }
 
-            .button{font-family: 'Playfair Display', serif; color: #B5926D; background-color: #FAF3EB; 
-            font-size: 15px; padding: 5px; border-radius: 6px; border: 1px solid#B5926D; 
-            width: 160px; text-align: center; float: center;}
+        .button:hover {
+            color: #fff;
+            background-color: #C8AB8D;
+            border: 1px;
+        }
 
-            .button:hover{color:#fff; background-color:#C8AB8D; border: 1px;}
+        #time_slot_radio {
+            margin-right: 30px;
+            text-align: center;
+        }
 
+        .slots {
+            padding-right: 30px;
+            line-height: 30px;
+        }
+    </style>
+</head>
 
-        </style>
-    </head>
-    <body>
-        <nav>
-          <div class="logo">    
-            <a href="index.html"><img src="images/full_logo.jpg" alt="logo"></a>   
-          </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="cats.html">Our Cats</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contacts.html">Reservations</a></li>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="images/full_logo.jpg" alt="logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="cats.html">Our Cats</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contacts.html">Reservations</a></li>
 
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
 
-        </nav>
-    <div class = "form">
-        <form name = "reserve">
+    </nav>
+    <div class="form">
+        <form name="reserve" onsubmit="return validateForm();">
             <h2> Make a reservation </h2>
-            <p>Name: <input type="TEXT" name = "name" size="20" maxlength="99" /></p>
-            <p>Email: <input type="TEXT" name = "email" size="30" maxlength="99" /></p>
-            <p>Phone number: <input type="TEXT" name = "phone"size="20" maxlength="99" /></p>
-            <p>Size of party: 
-            <select name = "size">
-                <option value = "1">1</option>
-                <option value = "2">2</option>
-                <option value = "3">3</option>
-                <option value = "4">4</option>
-            </select></p>
-            <p> Choose an event: </p>
-            <div class = "events">
-                <input type="radio" name="event">  Cookie Fiesta <br/>
-                <input type="radio" name="event">  Catfé Brewing <br/>
-                <input type="radio" name="event">  Cat Backing <br/>
-                <input type="radio" name="event">  Movie Night <br/>
-                <input type="radio" name="event">  Gaming Club <br/>
-                <input type="radio" name="event">  Latté Cat Art <br/>
-                <input type="radio" name="event">  Cat-o-ween <br/>
-                <input type="radio" name="event">  Kittens Greet & Meet <br/>
-                <input type="radio" name="event" onclick = "showDate()">  General Visit <br/>
+            <p>Name*: <input type="text" name="name" size="20" maxlength="99" id="name" /><span id="nameError"></span></p>
+            <p>Email*: <input type="text" name="email" size="30" maxlength="99" /><span id="emailError"></span></p>
+            <p>Phone number*: <input type="text" name="phone" size="20" maxlength="99" /><span id="phoneError"></span></p>
+            <p>Size of party*:
+                <select name="size">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </p>
+            <p style="padding-bottom: 5px;"> Choose an event*:
+                <select id="selectEvents" onchange="showTimeSlots();"> </select><span id="eventError"></span>
+            </p>
+            <div id="time_slot_selection" style="display: block; text-align: center;">
+                <span id="timeError"></span>
             </div>
-            <p>Day (MM/DD/YYYY): <input type="TEXT" name = "day" size="15" maxlength="99" /></p>
 
-
-            <br/>
-            <div class = "submit">
-                <input type="submit" class = "button" value="Submit" onclick = "validateForm()"/>
-                <input type="reset" class = "button" value="Clear Form" />
-
-                <h4 id = "thank"></h4>
+            <p>Day (MM/DD/YYYY)*: <input type="text" name="day" size="15" maxlength="99" id="datepicker" /><span id="dayError"></span></p>
+            <p>Requests: <textarea rows="3" cols="30" name="request" id="request"></textarea></p>
+            <br />
+            <div class="submit">
+                <input type="submit" class="button" value="Submit" />
+                <input type="reset" class="button" value="Clear Form" />
             </div>
         </form>
     </div>
-
-        <script src="nav.js"></script>
-
-        <script language = "javascript">
-            //If user was directed from events page then will check radio button automatically
-            window.onload = function() {
-              if (0 <= localStorage.getItem("eventChosen") && 7 >= localStorage.getItem("eventChosen")) {
-                var i = localStorage.getItem("eventChosen")
-                document.getElementsByName("event")[i].checked = true;
-                localStorage.setItem("eventChosen",10);
-              }
-            };
-        
-            function validateForm() {
-                // use javascript array for events list 
-                var name = document.forms["reserve"]["name"].value;
-                var phone = document.forms["reserve"]["phone"].value;
-                var email = document.forms["reserve"]["email"].value;
-                var day = document.forms["reserve"]["day"].value;
-
-                // if didn't enter last name, alert
-                if (name == "") {
-                    alert("Please enter your name.");
-                    return false;                  
-                }
-
-                if (email == "") {
-                    alert("Please enter your email address.");
-                    return false;
-                }
-            
-                if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(reserve.email.value))
-                {
-                    return true;
-                }
-                    alert("You have entered an invalid email address!")
-                    return false;
-
-                // if the phone number is not valid, display an alert
-                var phoneNumber = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
-                if (phone == "" || !phone.match(phoneNumber)){
-                alert("Please enter a valid phone number in the form of XXX XXX XXXX");
-                return false;
-                }
-
-                displayMessage();
-                return true;
-
-            }
-
-            function displayMessage() {
-                var message = "Thank you for making a reservation! We look forward to seeing you soon.";
-                document.getElementById("thank").innerHTML = message;
-
-            }
-
-            function showDate() {
-
-            }
-
-
-
-        </script>
-        <div class = "content">
-            <h1>CONTACT US</h1>
-            <div class = "block">
-                <h3> (510) 501-2274 </h3>
-            </div>
-            <div class = "block">
-                <h3> info@catfé.com </h3>
-            </div>
-            <div class = "block2">
-                <h3> Located in the Cummings Center </h3>
-            </div>
+    <div class="content">
+        <h1>CONTACT US</h1>
+        <div class="block">
+            <h2> (510) 501-2274 </h2>
         </div>
-        
-        <!-- add code here -->
-        
-        <footer>
-          <a href="index.html"><img src="images/catfeLogo.png" alt="Catfé Logo" id="logo"/>
-          <div class="name">Catfé</div></a>
-          <br>&copy; 2021 Catfé All Rights Reserved We Hope
-        <footer>
-    </body>
-    
+        <div class="block">
+            <h2> info@catfé.com </h2>
+        </div>
+        <div class="block2">
+            <h2> Located in the Cummings Center </h2>
+        </div>
+    </div>
+
+    <script src="nav.js"></script>
+
+    <script language="javascript">
+
+        //create a new object
+        function events(name, day, start_time, end_time) {
+            this.name = name;
+            this.day = day;
+            this.start_time = start_time;
+            this.end_time = end_time;
+
+        }
+
+        //Initialing new event array
+        newEvents = new Array(
+            new events("Cookie Fiesta", " Sunday", 15, 19),
+            new events("Catfé Brewing", " Wednesday", 14, 17),
+            new events("Cat Backing", " Monday", 15, 17),
+            new events("Movie Night", " Friday", 20, 23),
+            new events("Gaming Club", " Saturday", 21, 23),
+            new events("Latte Cat Art", " Sunday", 10, 12),
+            new events("Cat-o-ween", "Unavaliable", 12, 12),
+            new events("Kitten Greet and Meet", " Friday", 16, 18),
+            new events("General Visit", " ", 9, 17)
+        );
+
+        //Display events in the form
+        function selectEvents(events_arr) {
+            var events_str = "<option class='event_option' name='default' selected>--</option>";
+            for (var i = 0; i < events_arr.length; i++) {
+                events_str += "<option class='event_option' value=" + events_arr[i].name + ">" + events_arr[i].name + "</option>";
+
+            }
+            document.getElementById("selectEvents").innerHTML = events_str;
+        }
+
+        //valid the form
+        function validateForm() {
+            var name = required("name");
+            var email = required("email");
+            var phone = required("phone");
+            var day = required("day");
+            var validEmail = verifyEmail("email");
+            var vaildPhone = verifyNumber("phone");
+            var vaildEvent = verifyEvent();
+
+            if (vaildEvent == true) {
+                var chosen = verifySlots();
+            }
+
+            // display the confirmation of their reservation
+            if (name && email && phone && day && verifyEmail && vaildPhone && vaildEvent && chosen) {
+
+                // extract the name of the user and the date chosen from the form
+                var name_str = document.forms["reserve"]["name"].value;
+                var date_str = document.getElementById('datepicker').value;
+                var time_slot = document.getElementsByName("slot");
+
+                var selected_index = -1;
+                for (var i = 0; i < time_slot.length; i++) {
+                    if (time_slot[i].checked) {
+                        checked_index = time_slot[i].id;
+                    }
+                }
+                start_time_str = checked_index + ":00";
+                var event_index = getEventIndex();
+                event_str = newEvents[event_index - 1].name;
+                var html_str = "";
+
+                //create strings with styling information for the new window
+                div_style = "style = 'background-color: #FAF3EB; margin: 50px auto 40px auto; width: 60%; padding-top: 30px; padding-bottom: 30px; padding-left: 30px; padding-right: 30px; border-radius: 2em; border: 5px solid #fff; box-shadow: 0 0 0 2pt #FAF3EB;'";
+
+                styling_str = "style = 'text-align: center; padding-top:20px; font-family: 'Playfair Display', serif;'";
+
+                // if the user selects an event, display message as normal, if select general visit, alter grammar
+                if (event_index != 9) {
+                    html_str = "<div " + div_style + "> <p " + styling_str + "> Hi, " + name_str + ". </p> <p style = 'text-align: center;'> Thanks for making a reservation at the Catfé! We look forward to seeing you on " + date_str + " at " +
+                        start_time_str + " for " + event_str + ". </p></div>";
+                } else {
+                    html_str = "<p " + styling_str + "> Hi, " + name_str + ". </p> <p style = 'text-align: center;'> Thanks for making a reservation at the Catfé! We look forward to seeing you on " + date_str + " at " + start_time_str + " for a " +
+                        event_str + ". </p>";
+                }
+
+                //display message with reservation details in a new window
+                var newWindow = window.open();
+                newWindow.document.write(html_str);
+            }
+            // return true if all form elements are correct
+            return (name && email && phone && day && verifyEmail && vaildPhone && vaildEvent && chosen);
+        }
+
+        //Check if this field is empty
+        function required(idName) {
+            var requiredItem = document.forms["reserve"][idName].value;
+            if (requiredItem == "") {
+                $("#" + idName).addClass("addRequired");
+                document.getElementById(idName + "Error").innerHTML = "    Required";
+                return false;
+            }else{
+                $("#" + idName).removeClass("addRequired");
+                document.getElementById(idName + "Error").innerHTML = "";
+            }
+            return true;
+        }
+
+        //check if email is valid
+        function verifyEmail(idName) {
+            var email = document.forms["reserve"][idName].value;
+            if (required(idName) == true) {
+                if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(reserve.email.value)) {
+                    $("#" + idName).addClass("addRequired");
+                    document.getElementById(idName + "Error").innerHTML = "    Invalid email address";
+                    return false;
+                }else{
+                    $("#" + idName).removeClass("addRequired");
+                    document.getElementById(idName + "Error").innerHTML = "";
+                }
+            }
+            return true;
+        }
+
+        //check if phone number is valid
+        function verifyNumber(idName) {
+            var number = document.forms["reserve"][idName].value;
+            var phoneNumber = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+            if (required(idName) == true) {
+                if (!number.match(phoneNumber)) {
+                    $("#" + idName).addClass("addRequired");
+                    document.getElementById(idName + "Error").innerHTML = "    Invalid phone number";
+                    return false;
+                }else{
+                    $("#" + idName).removeClass("addRequired");
+                    document.getElementById(idName + "Error").innerHTML = "";
+                }
+            }
+            return true;
+        }
+
+        //check if one event has been selected
+        function verifyEvent() {
+            if (document.getElementsByClassName("event_option")[0].selected) {
+                $("selectEvents").addClass("addRequired");
+                document.getElementById("eventError").innerHTML = "   Please choose an event.";
+                return false;
+            }else{
+                $("selectEvents").removeClass("addRequired");
+                document.getElementById("eventError").innerHTML = "";
+            }
+            return true;
+        }
+
+        //ensure at least one time slot is selected
+        function verifySlots() {
+            var slot_arr = document.getElementsByName("slot");
+
+            if (document.getElementsByClassName("event_option")[7].selected) {
+                return true;
+            }
+            var chosen = false;
+            for (var i = 0; i < slot_arr.length; i++) {
+                if (slot_arr[i].checked) {
+                    chosen = true;
+                }
+            }
+            if (chosen == false) {
+                $("#time_slot_selection").addClass("addRequired");
+                document.getElementById("timeError").innerHTML = "Please choose a time slot.";
+            }else{
+                $("#time_slot_selection").removeClass("addRequired");
+                document.getElementById("timeError").innerHTML = "";
+            }
+            return chosen;
+
+        }
+
+        //display radio buttons for timeslots specific to event selected
+        function showTimeSlots() {
+            // find which one is selected
+            var selected_index = -1;
+            const arr = document.getElementsByClassName("event_option");
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i].selected) {
+                    selected_index = i;
+                }
+            }
+            var start_time;
+            var end_time;
+            if (selected_index > 0) {
+                // add data for that index from new events
+                start_time = newEvents[selected_index - 1].start_time;
+                end_time = newEvents[selected_index - 1].end_time;
+                day = newEvents[selected_index - 1].day;
+            } else if (selected_index == -1) {} else {
+                document.getElementById("time_slot_selection").style.display = "none";
+                return;
+            }
+
+            // make time slots
+            new_html = "<span id='timeError'></span>";
+            for (var i = start_time; i < end_time; i++) {
+                new_html += "<div class='slots'><input type='radio' id=" + i + " name='slot'>" + day + "  " + i + ":00 -- " + (i + 1) + ":00</div>";
+            }
+            document.getElementById("time_slot_selection").innerHTML = new_html;
+
+            // set visibility to block
+            document.getElementById("time_slot_selection").style.display = "block";
+        }
+
+        window.onload = function() {
+            selectEvents(newEvents);
+            eventPreselect();
+        }
+
+        //Selects event automatically if redirected from events page
+        function eventPreselect() {
+            if (0 <= localStorage.getItem("eventChosen") && 7 >= localStorage.getItem("eventChosen")) {
+                var i = parseInt(localStorage.getItem("eventChosen")) + 1;
+                document.getElementsByClassName("event_option")[i].selected = true;
+                localStorage.setItem("eventChosen", 10);
+                showTimeSlots();
+            }
+        }
+
+        // identify which event the user selected
+        function getEventIndex() {
+            var event_index = -1;
+            const arr = document.getElementsByClassName("event_option");
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i].selected) {
+                    event_index = i;
+                }
+            }
+            return event_index;
+        }
+    </script>
+    <!-- Footer -->
+    <footer>
+        <a href="index.html"><img src="images/catfeLogo.png" alt="Catfé Logo" id="logo" />
+            <div class="name">Catfé</div>
+        </a>
+        <br>&copy; 2021 Catfé All Rights Reserved We Hope
+    </footer>
+</body>
 
 </html>
