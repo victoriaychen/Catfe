@@ -176,7 +176,7 @@
                 <span id="timeError"></span>
             </div>
 
-            <p>Day (MM/DD/YYYY)*: <input type="TEXT" name="day" size="15" maxlength="99" id="datepicker" /><span id="dayError"></span></p>
+            <p>Day (MM/DD/YYYY)*: <input type="text" name="day" size="15" maxlength="99" id="datepicker" /><span id="dayError"></span></p>
             <p>Requests: <textarea rows="3" cols="30" name="request" id="request"></textarea></p>
             <br />
             <div class="submit">
@@ -201,6 +201,8 @@
     <script src="nav.js"></script>
 
     <script language="javascript">
+
+        //create a new object
         function events(name, day, start_time, end_time) {
             this.name = name;
             this.day = day;
@@ -209,6 +211,7 @@
 
         }
 
+        //Initialing new event array
         newEvents = new Array(
             new events("Cookie Fiesta", " Sunday", 15, 19),
             new events("Catfé Brewing", " Wednesday", 14, 17),
@@ -221,6 +224,7 @@
             new events("General Visit", " ", 9, 17)
         );
 
+        //Display events in the form
         function selectEvents(events_arr) {
             var events_str = "<option class='event_option' name='default' selected>--</option>";
             for (var i = 0; i < events_arr.length; i++) {
@@ -230,6 +234,7 @@
             document.getElementById("selectEvents").innerHTML = events_str;
         }
 
+        //valid the form
         function validateForm() {
             var name = required("name");
             var email = required("email");
@@ -258,52 +263,47 @@
                     }
                 }
                 start_time_str = checked_index + ":00";
-
-
                 var event_index = getEventIndex();
                 event_str = newEvents[event_index - 1].name;
                 var html_str = "";
 
                 //create strings with styling information for the new window
-                div_style =
-                    "style = 'background-color: #FAF3EB; margin: 50px auto 40px auto; width: 60%; padding-top: 30px; padding-bottom: 30px; padding-left: 30px; padding-right: 30px; border-radius: 2em; border: 5px solid #fff; box-shadow: 0 0 0 2pt #FAF3EB;'";
+                div_style = "style = 'background-color: #FAF3EB; margin: 50px auto 40px auto; width: 60%; padding-top: 30px; padding-bottom: 30px; padding-left: 30px; padding-right: 30px; border-radius: 2em; border: 5px solid #fff; box-shadow: 0 0 0 2pt #FAF3EB;'";
 
                 styling_str = "style = 'text-align: center; padding-top:20px; font-family: 'Playfair Display', serif;'";
-
-
 
                 // if the user selects an event, display message as normal, if select general visit, alter grammar
                 if (event_index != 9) {
                     html_str = "<div " + div_style + "> <p " + styling_str + "> Hi, " + name_str + ". </p> <p style = 'text-align: center;'> Thanks for making a reservation at the Catfé! We look forward to seeing you on " + date_str + " at " +
                         start_time_str + " for " + event_str + ". </p></div>";
-
                 } else {
                     html_str = "<p " + styling_str + "> Hi, " + name_str + ". </p> <p style = 'text-align: center;'> Thanks for making a reservation at the Catfé! We look forward to seeing you on " + date_str + " at " + start_time_str + " for a " +
                         event_str + ". </p>";
-
                 }
 
                 //display message with reservation details in a new window
                 var newWindow = window.open();
                 newWindow.document.write(html_str);
-
-
             }
-
             // return true if all form elements are correct
             return (name && email && phone && day && verifyEmail && vaildPhone && vaildEvent && chosen);
         }
 
+        //Check if this field is empty
         function required(idName) {
             var requiredItem = document.forms["reserve"][idName].value;
             if (requiredItem == "") {
                 $("#" + idName).addClass("addRequired");
                 document.getElementById(idName + "Error").innerHTML = "    Required";
                 return false;
+            }else{
+                $("#" + idName).removeClass("addRequired");
+                document.getElementById(idName + "Error").innerHTML = "";
             }
             return true;
         }
 
+        //check if email is valid
         function verifyEmail(idName) {
             var email = document.forms["reserve"][idName].value;
             if (required(idName) == true) {
@@ -311,11 +311,15 @@
                     $("#" + idName).addClass("addRequired");
                     document.getElementById(idName + "Error").innerHTML = "    Invalid email address";
                     return false;
+                }else{
+                    $("#" + idName).removeClass("addRequired");
+                    document.getElementById(idName + "Error").innerHTML = "";
                 }
             }
             return true;
         }
 
+        //check if phone number is valid
         function verifyNumber(idName) {
             var number = document.forms["reserve"][idName].value;
             var phoneNumber = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
@@ -324,23 +328,34 @@
                     $("#" + idName).addClass("addRequired");
                     document.getElementById(idName + "Error").innerHTML = "    Invalid phone number";
                     return false;
+                }else{
+                    $("#" + idName).removeClass("addRequired");
+                    document.getElementById(idName + "Error").innerHTML = "";
                 }
             }
             return true;
         }
 
+        //check if one event has been selected
         function verifyEvent() {
             if (document.getElementsByClassName("event_option")[0].selected) {
                 $("selectEvents").addClass("addRequired");
                 document.getElementById("eventError").innerHTML = "   Please choose an event.";
                 return false;
+            }else{
+                $("selectEvents").removeClass("addRequired");
+                document.getElementById("eventError").innerHTML = "";
             }
             return true;
         }
 
-        // ensure at least one time slot is selected
+        //ensure at least one time slot is selected
         function verifySlots() {
             var slot_arr = document.getElementsByName("slot");
+
+            if (document.getElementsByClassName("event_option")[7].selected) {
+                return true;
+            }
             var chosen = false;
             for (var i = 0; i < slot_arr.length; i++) {
                 if (slot_arr[i].checked) {
@@ -350,11 +365,13 @@
             if (chosen == false) {
                 $("#time_slot_selection").addClass("addRequired");
                 document.getElementById("timeError").innerHTML = "Please choose a time slot.";
+            }else{
+                $("#time_slot_selection").removeClass("addRequired");
+                document.getElementById("timeError").innerHTML = "";
             }
             return chosen;
 
         }
-
 
         //display radio buttons for timeslots specific to event selected
         function showTimeSlots() {
@@ -388,8 +405,6 @@
             // set visibility to block
             document.getElementById("time_slot_selection").style.display = "block";
         }
-
-
 
         window.onload = function() {
             selectEvents(newEvents);
