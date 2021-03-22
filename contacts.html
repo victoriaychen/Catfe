@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="This is a website for assignment 2 for CS20">
@@ -12,7 +12,7 @@
 
     <!-- jQuery and jQeury UI -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
     <title>Catfé - Contact</title>
@@ -111,7 +111,7 @@
             border: 1px solid#B5926D;
             width: 160px;
             text-align: center;
-            float: center;
+            /*float: center;*/
         }
 
         .button:hover {
@@ -155,7 +155,7 @@
 
     </nav>
     <div class="form">
-        <form name="reserve" onsubmit="return validateForm()">
+        <form name="reserve" onsubmit="return validateForm();">
             <h2> Make a reservation </h2>
             <p>Name*: <input type="text" name="name" size="20" maxlength="99" id="name" /><span id="nameError"></span></p>
             <p>Email*: <input type="text" name="email" size="30" maxlength="99" /><span id="emailError"></span></p>
@@ -168,10 +168,13 @@
                     <option value="4">4</option>
                 </select>
             </p>
-            <p style="padding-bottom: 5px"> Choose an event*:
+            <p style="padding-bottom: 5px;"> Choose an event*:
                 <select id="selectEvents" onchange="showTimeSlots();"> </select><span id="eventError"></span>
             </p>
-            <div id="time_slot_selection" style="display: none; text-align: center;"><span id="timeError"></span></div>
+            <div id="time_slot_selection" style="display: block; text-align: center;">
+                <span id="timeError">
+                </span>
+            </div>
 
             <p>Day (MM/DD/YYYY)*: <input type="TEXT" name="day" size="15" maxlength="99" id="datepicker" /><span id="dayError"></span></p>
             <p>Requests: <textarea rows="3" cols="30" name="request" id="request"></textarea></p>
@@ -228,6 +231,8 @@
         }
 
         function validateForm() {
+            alert("Validating!");
+            console.log("Validating..");
             var name = required("name");
             var email = required("email");
             var phone = required("phone");
@@ -236,19 +241,67 @@
             var vaildPhone = verifyNumber("phone");
             var vaildEvent = verifyEvent();
 
-            // ensure at least one time slot is selected (Not sure how to do this)
-            if (document.getElementsByClassName("event_option")[0].selected) {
-                $("time_slot_selection").addClass("addRequired");
-                document.getElementById("timeError").innerHTML = "   Please choose an time slot.";
-                return false;
+            // ensure at least one time slot is selected 
+            var slot_arr = document.getElementsByName("slot"); 
+            var chosen = false;
+            for (var i = 0; i < slot_arr.length; i++) {
+                if (slot_arr[i].checked) {
+                    alert("found check");
+                    chosen = true;
+                    alert(chosen);
+                }
             }
+            if (chosen == false ) {
+                alert("Chosen is false!");
+                console.log("Chosen is false")
+                $("#time_slot_selection").addClass("addRequired");
+                alert(document.getElementById("timeError"));
+                console.log(document.getElementById("timeError"));
+                //document.getElementById("timeError").innerHTML = "Required";
+                console.log("failed");
+                alert("Failed");
+            }
+            alert("Chosen: " + chosen);
+            console.log("out of conditional"); 
 
+            chosen = true;
             // display the confirmation of their reservation
-            if (name && email && phone && day && verifyEmail && vaildPhone && vaildEvent) {
-                alert("Thank you for making a reservation! We look forward to seeing you soon.");
+            if (name && email && phone && day && verifyEmail && vaildPhone && vaildEvent && chosen) {
+                alert("HERE");
+                // extract the name of the user and the date chosen from the form 
+                var name_str = document.forms["reserve"]["name"].value;
+                var date_str = document.getElementById('datepicker').value;
+            
+                var event_index = getEventIndex();
+                event_str = newEvents[event_index - 1].name;
+                var html_str = "";
+
+                //create strings with styling information for the new window
+                div_style = "style = 'background-color: #FAF3EB; margin: 50px auto 40px auto; width: 60%; padding-top: 30px; padding-bottom: 30px; padding-left: 30px; padding-right: 30px; border-radius: 2em; border: 5px solid #fff; box-shadow: 0 0 0 2pt #FAF3EB;'";
+
+                styling_str = "style = 'text-align: center; padding-top:20px; font-family: 'Playfair Display', serif;'";
+
+
+
+                // if the user selects an event, display message as normal, if select general visit, alter grammar
+                if (event_index != 9) {
+                    html_str = "<div " + div_style + "> <p " + styling_str + "> Hi, " + name_str + ". </p> <p style = 'text-align: center;'> Thanks for making a reservation at the Catfé! We look forward to seeing you on " + date_str + " for " + event_str + ". </p></div>";
+
+                } else {
+                    html_str = "<p " + styling_str + "> Hi, " + name_str + ". </p> <p style = 'text-align: center;'> Thanks for making a reservation at the Catfé! We look forward to seeing you on " + date_str + " for a " + event_str + ". </p>";
+
+                }
+        
+                //display message with reservation details in a new window
+                var newWindow = window.open();
+                newWindow.document.write(html_str);
+
+
             }
 
-            return (name && email && phone && day && verifyEmail && vaildPhone && vaildEvent);
+            // open 
+            alert("RETURNING " + name && email && phone && day && verifyEmail && vaildPhone && vaildEvent && chosen);
+            return (name && email && phone && day && verifyEmail && vaildPhone && vaildEvent && chosen);
         }
 
         function required(idName) {
@@ -339,7 +392,7 @@
         window.onload = function() {
             selectEvents(newEvents);
             // isDefault();
-            eventPreselect();
+           // eventPreselect();
         }
 
         //Selects event automatically if redirected from events page
@@ -351,6 +404,18 @@
           showTimeSlots();
           }
         }
+
+        // identify which event the user selected
+        function getEventIndex() {
+            var event_index = -1;
+                const arr = document.getElementsByClassName("event_option");
+                for (var i = 0; i < arr.length; i++) {
+                    if (arr[i].selected) {
+                        event_index = i;
+                    }
+                }
+            return event_index;
+        }
     </script>
 
     <footer>
@@ -358,7 +423,8 @@
             <div class="name">Catfé</div>
         </a>
         <br>&copy; 2021 Catfé All Rights Reserved We Hope
-        <footer>
+    </footer>
 </body>
 
 </html>
+
