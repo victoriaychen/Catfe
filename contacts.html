@@ -239,7 +239,6 @@
             var vaildEvent = verifyEvent();
             var chosen = verifySlots();
 
-            // ensure at least one time slot is selected 
 
             // display the confirmation of their reservation
             if (name && email && phone && day && verifyEmail && vaildPhone && vaildEvent && chosen) {
@@ -286,7 +285,7 @@
 
             }
 
-            // open 
+            // return true if all form elements are correct
             return (name && email && phone && day && verifyEmail && vaildPhone && vaildEvent && chosen);
         }
 
@@ -334,6 +333,7 @@
             return true;
         }
 
+        // ensure at least one time slot is selected 
         function verifySlots() {
             var slot_arr = document.getElementsByName("slot"); 
             var chosen = false;
@@ -375,7 +375,6 @@
                 return;
             }
 
-            // <input type="radio" id="put UID here">00:00
             // make time slots
             new_html = "<span id='timeError'></span>";
             for (var i = start_time; i < end_time; i++) {
@@ -387,15 +386,15 @@
             document.getElementById("time_slot_selection").style.display = "block";
         }
 
-        // returns whether or not the default is selected
-        // function isDefault() {
-        //     return document.getElementsByClassName("event_option")[0].selected;
-        // }
+         returns whether or not the default is selected
+         function isDefault() {
+             return document.getElementsByClassName("event_option")[0].selected;
+         }
 
         window.onload = function() {
             selectEvents(newEvents);
-            // isDefault();
-           // eventPreselect();
+            isDefault();
+           eventPreselect();
         }
 
         //Selects event automatically if redirected from events page
