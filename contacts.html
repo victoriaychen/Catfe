@@ -235,7 +235,7 @@
             document.getElementById("selectEvents").innerHTML = events_str;
         }
 
-        //valid the form
+        //validate the form
         function validateForm() {
             var name = required("name");
             var email = required("email");
@@ -350,7 +350,7 @@
             return true;
         }
 
-        //ensure at least one time slot is selected
+        // check if one time slot is selected
         function verifySlots() {
             var slot_arr = document.getElementsByName("slot");
 
