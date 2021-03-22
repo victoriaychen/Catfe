@@ -384,14 +384,10 @@
             document.getElementById("time_slot_selection").style.display = "block";
         }
 
-         returns whether or not the default is selected
-         function isDefault() {
-             return document.getElementsByClassName("event_option")[0].selected;
-         }
+    
 
         window.onload = function() {
             selectEvents(newEvents);
-            isDefault();
            eventPreselect();
         }
 
