@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="This is a website for assignment 2 for CS20">
@@ -12,7 +13,7 @@
 
     <!-- jQuery and jQeury UI -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"/>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
     <title>Catfé - Contact</title>
@@ -180,7 +181,7 @@
             <br />
             <div class="submit">
                 <input type="submit" class="button" value="Submit" />
-                <input type="reset" class="button" value="Clear Form"/>
+                <input type="reset" class="button" value="Clear Form" />
             </div>
         </form>
     </div>
@@ -237,17 +238,19 @@
             var validEmail = verifyEmail("email");
             var vaildPhone = verifyNumber("phone");
             var vaildEvent = verifyEvent();
-            var chosen = verifySlots();
 
+            if (vaildEvent == true) {
+                var chosen = verifySlots();
+            }
 
             // display the confirmation of their reservation
             if (name && email && phone && day && verifyEmail && vaildPhone && vaildEvent && chosen) {
-            
-                // extract the name of the user and the date chosen from the form 
+
+                // extract the name of the user and the date chosen from the form
                 var name_str = document.forms["reserve"]["name"].value;
                 var date_str = document.getElementById('datepicker').value;
                 var time_slot = document.getElementsByName("slot");
-                
+
                 var selected_index = -1;
                 for (var i = 0; i < time_slot.length; i++) {
                     if (time_slot[i].checked) {
@@ -256,13 +259,14 @@
                 }
                 start_time_str = checked_index + ":00";
 
-       
+
                 var event_index = getEventIndex();
                 event_str = newEvents[event_index - 1].name;
                 var html_str = "";
 
                 //create strings with styling information for the new window
-                div_style = "style = 'background-color: #FAF3EB; margin: 50px auto 40px auto; width: 60%; padding-top: 30px; padding-bottom: 30px; padding-left: 30px; padding-right: 30px; border-radius: 2em; border: 5px solid #fff; box-shadow: 0 0 0 2pt #FAF3EB;'";
+                div_style =
+                    "style = 'background-color: #FAF3EB; margin: 50px auto 40px auto; width: 60%; padding-top: 30px; padding-bottom: 30px; padding-left: 30px; padding-right: 30px; border-radius: 2em; border: 5px solid #fff; box-shadow: 0 0 0 2pt #FAF3EB;'";
 
                 styling_str = "style = 'text-align: center; padding-top:20px; font-family: 'Playfair Display', serif;'";
 
@@ -270,13 +274,15 @@
 
                 // if the user selects an event, display message as normal, if select general visit, alter grammar
                 if (event_index != 9) {
-                    html_str = "<div " + div_style + "> <p " + styling_str + "> Hi, " + name_str + ". </p> <p style = 'text-align: center;'> Thanks for making a reservation at the Catfé! We look forward to seeing you on " + date_str + " at " + start_time_str + " for " + event_str + ". </p></div>";
+                    html_str = "<div " + div_style + "> <p " + styling_str + "> Hi, " + name_str + ". </p> <p style = 'text-align: center;'> Thanks for making a reservation at the Catfé! We look forward to seeing you on " + date_str + " at " +
+                        start_time_str + " for " + event_str + ". </p></div>";
 
                 } else {
-                    html_str = "<p " + styling_str + "> Hi, " + name_str + ". </p> <p style = 'text-align: center;'> Thanks for making a reservation at the Catfé! We look forward to seeing you on " + date_str + " at " + start_time_str + " for a " + event_str + ". </p>";
+                    html_str = "<p " + styling_str + "> Hi, " + name_str + ". </p> <p style = 'text-align: center;'> Thanks for making a reservation at the Catfé! We look forward to seeing you on " + date_str + " at " + start_time_str + " for a " +
+                        event_str + ". </p>";
 
                 }
-        
+
                 //display message with reservation details in a new window
                 var newWindow = window.open();
                 newWindow.document.write(html_str);
@@ -332,18 +338,18 @@
             return true;
         }
 
-        // ensure at least one time slot is selected 
+        // ensure at least one time slot is selected
         function verifySlots() {
-            var slot_arr = document.getElementsByName("slot"); 
+            var slot_arr = document.getElementsByName("slot");
             var chosen = false;
             for (var i = 0; i < slot_arr.length; i++) {
                 if (slot_arr[i].checked) {
                     chosen = true;
                 }
             }
-            if (chosen == false ) {
+            if (chosen == false) {
                 $("#time_slot_selection").addClass("addRequired");
-                document.getElementById("timeError").innerHTML = "Required";
+                document.getElementById("timeError").innerHTML = "Please choose a time slot.";
             }
             return chosen;
 
@@ -367,8 +373,7 @@
                 start_time = newEvents[selected_index - 1].start_time;
                 end_time = newEvents[selected_index - 1].end_time;
                 day = newEvents[selected_index - 1].day;
-            } else if (selected_index == -1) {
-            } else {
+            } else if (selected_index == -1) {} else {
                 document.getElementById("time_slot_selection").style.display = "none";
                 return;
             }
@@ -384,32 +389,32 @@
             document.getElementById("time_slot_selection").style.display = "block";
         }
 
-    
+
 
         window.onload = function() {
             selectEvents(newEvents);
-           eventPreselect();
+            eventPreselect();
         }
 
         //Selects event automatically if redirected from events page
         function eventPreselect() {
-          if (0 <= localStorage.getItem("eventChosen") && 7 >= localStorage.getItem("eventChosen")) {
-          var i = parseInt(localStorage.getItem("eventChosen")) + 1;
-          document.getElementsByClassName("event_option")[i].selected = true;
-          localStorage.setItem("eventChosen",10);
-          showTimeSlots();
-          }
+            if (0 <= localStorage.getItem("eventChosen") && 7 >= localStorage.getItem("eventChosen")) {
+                var i = parseInt(localStorage.getItem("eventChosen")) + 1;
+                document.getElementsByClassName("event_option")[i].selected = true;
+                localStorage.setItem("eventChosen", 10);
+                showTimeSlots();
+            }
         }
 
         // identify which event the user selected
         function getEventIndex() {
             var event_index = -1;
-                const arr = document.getElementsByClassName("event_option");
-                for (var i = 0; i < arr.length; i++) {
-                    if (arr[i].selected) {
-                        event_index = i;
-                    }
+            const arr = document.getElementsByClassName("event_option");
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i].selected) {
+                    event_index = i;
                 }
+            }
             return event_index;
         }
     </script>
@@ -423,4 +428,3 @@
 </body>
 
 </html>
-
