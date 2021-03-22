@@ -11,12 +11,10 @@
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-
-
-      
         <title>Catfé - Home</title>
         <link href="stylesheet.css" type="text/css" rel="stylesheet" />
-        <script type="text/javascript">
+        <script type="text/javascript">  
+        //Function to shrink 'top' at scroll
         window.onscroll = function() {scrollFunction()};
         
         function scrollFunction() {
@@ -26,10 +24,8 @@
             document.getElementById("slideshow").style.height = "600px";
           }
         }
-
         </script>
         <style>
-            
             @import url(https://fonts.googleapis.com/css?family=Fredoka+One);
             h1{
                 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -85,27 +81,7 @@
               width: 20%;
               margin: 0 1%;
             }
-            
-            
-            /* .block1 {
-                display: inline-block;
-                color:#000000;
-                font-weight: bold;
-                font-size: 40px;
-                height: auto; 
-                width: auto; 
-                margin-left: 50%;   
-                z-index: 2;
-            } */
 
-            /* .main {
-                background-color: rgb(255, 255, 255);
-                background-position: center;
-                background-size: cover;
-                width: 100%;
-                height: 40vh;
-                padding-top: 5%;
-            } */
             #slideshow { 
                 position: relative; 
                 overflow: hidden;
@@ -115,6 +91,7 @@
                 z-index: -200;
                 transition: 0.7s;
             }
+            
             #slideshow img{
                 width: 100%; 
                 margin-top: -10%;
@@ -124,6 +101,7 @@
             #slideshow > div { 
                 position: absolute; 
             }
+            
             .wave{
                 position: absolute;
                 top: 70%;
@@ -132,12 +110,14 @@
                 text-align: center;
                 transform: translate(-50%, -50%);
             }
+            
             label{
                 font-weight: 500;
                 color: rgb(255, 255, 255);
                 cursor: pointer;
                 letter-spacing: 3px;
             }
+            
             label span{
                 display: inline-block;
                 object-fit: cover;
@@ -146,6 +126,7 @@
                 font-weight: 500;
                 transition: 0.3s cubic-bezier(0.68,-0.55,0.265,1.55);
             }
+            
             label:hover span{
                 color: #eeb867;
                 transform: translateY(-30px);
@@ -269,15 +250,18 @@
               <a href="about.html"><label>CATFÉ</label></a>
             </div>  
          </div>
+        <!-- Mission statement -->
         <div id="subtitle">
           <h3>Our Mission</h3>
           <h4>To bring Jumbos joy through the company of our adorable cats, coupled <br>with exceptional food and beverages served in a cozy environment</h4>
         </div>
+        <!-- Photo library -->
         <div class="photos">
         <img src="images/slide1.jpg" alt="Sitting corner">
         <img src="images/slide2.jpg" alt="Cat staring">
         <img src="images/slide3.jpg" alt="Cat walking on platforms">
         </div>
+        <!-- Menu items -->
         <h3>Seasonal menu additions</h3>
         <div class="menu">
           <div class="block">
@@ -311,6 +295,7 @@
         <footer>
         
         <script>
+            //Slide show animation
             $("#slideshow > div:gt(0)").hide();
             setInterval(function() {
             $('#slideshow > div:first')
@@ -320,7 +305,7 @@
                 .end()
                 .appendTo('#slideshow');
             }, 3000);
-            //Animation Welcome
+            //H1 text animation
             const text = document.querySelectorAll('label');
             text.forEach(label =>{
             label.innerHTML = label.textContent.split('').map((text, wave) =>
