@@ -242,7 +242,7 @@
 
             // display the confirmation of their reservation
             if (name && email && phone && day && verifyEmail && vaildPhone && vaildEvent && chosen) {
-                alert("in confirmation");
+            
                 // extract the name of the user and the date chosen from the form 
                 var name_str = document.forms["reserve"]["name"].value;
                 var date_str = document.getElementById('datepicker').value;
@@ -256,8 +256,7 @@
                 }
                 start_time_str = checked_index + ":00";
 
-                alert("got variables");
-                alert(time_slot);
+       
                 var event_index = getEventIndex();
                 event_str = newEvents[event_index - 1].name;
                 var html_str = "";
@@ -369,7 +368,6 @@
                 end_time = newEvents[selected_index - 1].end_time;
                 day = newEvents[selected_index - 1].day;
             } else if (selected_index == -1) {
-                alert("Error in showTimeSlots");
             } else {
                 document.getElementById("time_slot_selection").style.display = "none";
                 return;
